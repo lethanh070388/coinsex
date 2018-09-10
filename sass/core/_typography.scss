@@ -1,0 +1,59 @@
+// Typography
+// OPEN SANS FONT
+  
+@font-face {
+    font-family: "Open Sans";
+    src: local(Open Sans Light),
+    url("#{$open-sans-font-path}OpenSansLight.eot");
+    src: url("#{$open-sans-font-path}OpenSansLight.eot?#iefix") format("embedded-opentype"),
+    url("#{$open-sans-font-path}OpenSansLight.woff2") format("woff2"),
+    url("#{$open-sans-font-path}OpenSansLight.woff") format("woff"),
+    url("#{$open-sans-font-path}OpenSansLight.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: local(Open Sans Regular),
+    url("#{$open-sans-font-path}OpenSansRegular.eot");
+    src: url("#{$open-sans-font-path}OpenSansRegular.eot?#iefix") format("embedded-opentype"),
+    url("#{$open-sans-font-path}OpenSansRegular.woff2") format("woff2"),
+    url("#{$open-sans-font-path}OpenSansRegular.woff") format("woff"),
+    url("#{$open-sans-font-path}OpenSansRegular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("#{$open-sans-font-path}OpenSansSemiBold.eot");
+    src: url("#{$open-sans-font-path}OpenSansSemiBold.eot?#iefix") format("embedded-opentype"),
+    url("#{$open-sans-font-path}OpenSansSemiBold.woff2") format("woff2"),
+    url("#{$open-sans-font-path}OpenSansSemiBold.woff") format("woff"),
+    url("#{$open-sans-font-path}OpenSansSemiBold.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("#{$open-sans-font-path}OpenSansBold.eot");
+    src: url("#{$open-sans-font-path}OpenSansBold.eot?#iefix") format("embedded-opentype"),
+    url("#{$open-sans-font-path}OpenSansBold.woff2") format("woff2"),
+    url("#{$open-sans-font-path}OpenSansBold.woff") format("woff"),
+    url("#{$open-sans-font-path}OpenSansBold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    color: $font-black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+}

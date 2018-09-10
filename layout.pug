@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Layout
+        //- Font Awesome
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        //- Bootstrap core CSS
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        //- Custom style
+        <link href="../css/coinsex.css" rel="stylesheet">
+    body
+        .container-fluid.p-0
+            .navbar.navbar-expand-lg.navbar-light.bg-light
+                .container
+                    a.navbar-brand(href="#")
+                    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                        span.navbar-toggler-icon
+
+                    .collapse.navbar-collapse#navbarSupportedContent
+                        ul.navbar-nav.ml-auto
+                            li.nav-item.dropdown
+                                a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                                    span BTC
+                                .dropdown-menu(aria-labelledby="navbarDropdown")
+                                    a.dropdown-item(href="#") Buy sell BTC
+                            li.nav-item.active
+                                a.nav-link(href="#") 
+                                    span ETH
+                            li.nav-item
+                                a.nav-link(href="#") 
+                                    span DASH
+                            li.nav-item
+                                a.nav-link(href="#") 
+                                    span Wallet
+                            li.nav-item
+                                a.nav-link(href="#") 
+                                    span Orders
+                            li.nav-item
+                                a.nav-link(href="#") 
+                                    span Login
+                            li.nav-item
+                                a.nav-link(href="#") 
+                                    span Register
+                            .dropdown.select-lang
+                                button.btn.dropdown-toggle(type="button" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Dropdown
+                                .dropdown-menu(aria-labelledby="dropdownLang")
+                                    button.dropdown-item(type="button") English
+                                    button.dropdown-item(type="button") Combodia
+                                    button.dropdown-item(type="button") Vietnamese
+                    
+                        
+            
+        block main-content
+
+        script(src="../js/jquery-3.3.1.min.js")
+        script(src="../js/popper.min.js")
+        script(src="../js/bootstrap.min.js")
+        script(src="../js/main.js")
+        block script-append

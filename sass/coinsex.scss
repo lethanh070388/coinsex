@@ -1,0 +1,28 @@
+/*
+ * Coinsex design by AlexLe
+ * Version: CX_A 1.0.0
+ *
+ *
+ * Copyright:  Coinsex design by AlexLe
+ * thanhtruong070388@gmail.com
+ */
+
+@charset "UTF-8";
+
+// Bootstrap
+@import "core/bootstrap/functions";
+@import "core/bootstrap/variables";
+
+// CORE
+@import "core/mixins";
+
+// Custom variables
+@import "core/colors";
+@import "core/custom-variables";
+@import "core/typography";
+
+// Free addons
+// @import "addons/datatables";
+
+// Custom styles
+@import "style";

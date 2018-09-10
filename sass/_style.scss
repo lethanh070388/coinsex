@@ -1,0 +1,126 @@
+// LAYOUT
+.navbar{
+    padding: 0;
+}
+.navbar-brand{
+    min-width: 205px;
+    padding: 45px;
+    background-image: url('../assets/logo-en-US-.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.navbar-light{
+    .navbar-nav{
+        padding-bottom: 1em;
+        .nav-link{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 18px;
+            color: $font-black;
+            padding: .75em .5em;
+            position: relative;
+            &:hover{
+                color: $font-black;
+                &:before{
+                    transform: scaleX(1);
+                    opacity: 1;
+                    transition: all .3s ease;
+                }
+                span{
+                    color: $font-white;
+                    transition: all .2s ease;
+                    text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                }
+            }
+            &:before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: $green;
+                top: 0;
+                left: 0;
+                transform: scaleX(0);
+                opacity: 0;
+                transform-origin: left top;
+                transition: all .2s ease;
+            }
+            @media screen and (min-width: 992px){
+                &:before{
+                    transform-origin: center top;
+                }
+            }
+            span{
+                position: relative;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+        @media screen and (min-width: 1200px){
+            .nav-link{
+                padding: .75em 1em;
+            }
+        }
+    }
+}
+.dropdown-toggle{
+    &:after{
+        z-index: 1000;
+        position: relative;
+    }
+    &:hover{
+        &:after{
+            border-top-color: $font-white;
+        }
+    }
+}
+.dropdown-item{
+    text-transform: uppercase;
+}
+.select-lang{
+    padding-left: .5em;
+    padding-top: .5em;
+    .btn{
+        border-color: #ccc;
+        background-color: #fff;
+        color: $font-black;
+        border-radius: 0;
+    }
+    .dropdown-toggle{
+        &:hover{
+            &:after{
+                border-top-color: $font-black;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px){
+    .select-lang{
+        padding-top: .5em;
+        .dropdown-menu{
+            left: .5em;
+        }
+    }
+    .bg-light{
+        .navbar-nav{
+            padding-bottom: 0;
+        }
+    }
+}
+
+.dropdown-menu {
+    color: $font-white;
+    border: 1px solid $purple;
+    background-color: $purple;
+    border-radius: 0;
+}
+.dropdown-item {
+    color: $font-white;
+    &:hover{
+        color: $font-white;
+        background-color: $green;
+    }
+}
+// END LAYOUT

@@ -1,0 +1,26 @@
+// Material colors
+$purple:        purple;
+$yellow:      #F0D64E;
+$yellow-bg-footer: #F0D550;
+
+// Dropdown item hover
+$green: #1ABC90;
+
+$font-black: #000;
+$font-white: #fff;
+
+$gray-menu: #f1f1f1;
+
+$material-colors: () !default;
+$material-colors: map-merge((
+  "bg-primary":        $purple,
+  "bg-secondary":      $yellow,
+  "bg-footer": $yellow-bg-footer,
+  "bg-light": $gray-menu
+), $material-colors);
+
+@each $color_name, $color in $material-colors {
+  .#{$color_name} {
+    background-color: $color !important;
+  }
+}
