@@ -13,10 +13,28 @@
   background-color: #F0D64E !important; }
 
 .bg-footer {
-  background-color: #F0D550 !important; }
+  background-color: #F9B81F !important; }
 
 .bg-light {
   background-color: #f1f1f1 !important; }
+
+.text-blue {
+  color: #033C93 !important; }
+
+.text-ocean {
+  color: #36c6d3 !important; }
+
+.text-red {
+  color: #FF2A00 !important; }
+
+.text-yellow {
+  color: #F0D64E !important; }
+
+.text-cyan {
+  color: #1E9FF2 !important; }
+
+.text-green {
+  color: #1ABC90 !important; }
 
 @font-face {
   font-family: "Open Sans";
@@ -42,10 +60,11 @@
   src: url("../fonts/open-sans/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansBold.woff2") format("woff2"), url("../fonts/open-sans/OpenSansBold.woff") format("woff"), url("../fonts/open-sans/OpenSansBold.ttf") format("truetype");
   font-weight: 700; }
 
-body {
+html, body, button, input, select {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  color: #000; }
+  color: #000;
+  font-size: 12px; }
 
 h1,
 h2,
@@ -55,8 +74,72 @@ h5,
 h6 {
   font-weight: 300; }
 
+.title-1,
+.title-2,
+.title-3,
+.title-4 {
+  font-weight: 400; }
+
+.font-bold,
+b {
+  font-weight: 500; }
+
+@media (min-width: 768px) {
+  html, body, button, input, select {
+    font-size: 14px; } }
+
+@media (min-width: 992px) {
+  html, body, button, input, select {
+    font-size: 16px; } }
+
+.btn {
+  border-radius: 0;
+  padding: .5em 1em; }
+
+.btn-sell,
+.btn-buy,
+.btn-dark {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  transition: all .3s ease; }
+
+.btn-buy {
+  background-color: #1E9FF2; }
+  .btn-buy:hover {
+    background-color: #2ca5f3;
+    box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+
+.btn-sell {
+  background-color: #1ABC90; }
+  .btn-sell:hover {
+    background-color: #1cc99a;
+    box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+
+.btn-dark {
+  padding: .375em 1em;
+  background-color: #033C93; }
+  .btn-dark:hover {
+    background-color: #0342a2; }
+
+.form-control {
+  border-radius: 0; }
+
+html, body, .wrapper {
+  height: 100%; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column; }
+
+.main-content {
+  flex: 1; }
+
 .navbar {
-  padding: 0; }
+  padding: 0;
+  z-index: 1010; }
 
 .navbar-brand {
   min-width: 205px;
@@ -71,7 +154,7 @@ h6 {
   .navbar-light .navbar-nav .nav-link {
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     color: #000;
     padding: .75em .5em;
     position: relative; }
@@ -104,6 +187,17 @@ h6 {
       position: relative;
       display: inline-block;
       text-align: center; }
+  @media (min-width: 768px) {
+    .navbar-light .navbar-nav .nav-link {
+      font-size: 16px; } }
+  @media (min-width: 992px) {
+    .navbar-light .navbar-nav .nav-link {
+      font-size: 18px; } }
+  .navbar-light .navbar-nav .active .nav-link:before {
+    transform: scaleX(1);
+    opacity: 1; }
+  .navbar-light .navbar-nav .active .nav-link span {
+    color: #fff; }
   @media screen and (min-width: 1200px) {
     .navbar-light .navbar-nav .nav-link {
       padding: .75em 1em; } }
@@ -148,3 +242,136 @@ h6 {
   .dropdown-item:hover {
     color: #fff;
     background-color: #1ABC90; }
+
+.footer {
+  position: relative;
+  z-index: 1010; }
+  .footer a {
+    color: #000;
+    transition: all .3s ease; }
+    .footer a:hover {
+      color: #fff;
+      text-decoration: none; }
+  .footer .cell {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .footer h6 {
+    padding-bottom: .25rem; }
+  @media (min-width: 768px) {
+    .footer h6 {
+      padding-bottom: .5rem; } }
+  .footer .form-control {
+    border: 0; }
+
+.bg-footer {
+  background-color: #F9B81F;
+  background-image: url("../assets/bg-footer.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative; }
+  .bg-footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F9B81F;
+    opacity: .8; }
+
+.market {
+  background-image: url("../assets/market_bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  color: #fff; }
+  .market:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.16)); }
+  .market_info {
+    padding: 2em 1em;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1000; }
+
+.chart-wrapper {
+  flex-grow: 1; }
+
+canvas {
+  position: absolute;
+  top: 0; }
+
+.item {
+  background-color: #f1f1f1;
+  position: relative;
+  border-top: 4px solid transparent;
+  padding: 1em;
+  margin-bottom: 1em;
+  transition: all .5s ease; }
+  .item > * {
+    padding-bottom: 1em; }
+  .item:hover {
+    background-color: #f9f9f9; }
+  .item_status {
+    position: absolute;
+    padding: 0.5em 1.5em;
+    right: 0;
+    top: 0;
+    font-weight: 500; }
+  .item_price span {
+    font-weight: 500; }
+  .item_info {
+    display: flex;
+    align-items: baseline; }
+    .item_info span {
+      vertical-align: middle; }
+  .item_quantity {
+    font-style: italic; }
+    .item_quantity span {
+      font-weight: 500; }
+  .item_owner {
+    font-weight: 500;
+    padding-right: 1.5em; }
+  .item_label {
+    padding: 0 .5em;
+    font-size: .8em;
+    color: #fff; }
+
+.list-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .list-items.sell .item {
+    border-top-color: #F0D64E; }
+    .list-items.sell .item_status {
+      background-color: #F0D64E; }
+      .list-items.sell .item_status a {
+        color: #033C93; }
+    .list-items.sell .item_label {
+      background-color: #4CB500; }
+  .list-items.buy .item {
+    border-top-color: #033C93; }
+    .list-items.buy .item_status {
+      background-color: #033C93; }
+      .list-items.buy .item_status a {
+        color: #fff; }
+    .list-items.buy .item_label {
+      background-color: #4CB500; }
+
+span.currency {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("../assets/icon_bitcoin.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 1em; }

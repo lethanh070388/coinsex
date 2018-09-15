@@ -1,26 +1,47 @@
 // Material colors
 $purple:        purple;
 $yellow:      #F0D64E;
-$yellow-bg-footer: #F0D550;
+$yellow-bg-footer: #F9B81F;
+$darkblue: #033C93;
+$cyan: #1E9FF2;
+$oceanblue: #36c6d3;
+$red: #FF2A00;
 
 // Dropdown item hover
 $green: #1ABC90;
+$lightgreen: #4CB500;
 
-$font-black: #000;
-$font-white: #fff;
+$black: #000;
+$white: #fff;
 
-$gray-menu: #f1f1f1;
+$gray: #f1f1f1;
 
 $material-colors: () !default;
 $material-colors: map-merge((
   "bg-primary":        $purple,
   "bg-secondary":      $yellow,
   "bg-footer": $yellow-bg-footer,
-  "bg-light": $gray-menu
+  "bg-light": $gray
 ), $material-colors);
 
 @each $color_name, $color in $material-colors {
   .#{$color_name} {
     background-color: $color !important;
+  }
+}
+
+$text-colors: () !default;
+$text-colors: map-merge((
+  "text-blue": $darkblue,
+  "text-ocean": $oceanblue,
+  "text-red": $red,
+  "text-yellow": $yellow,
+  "text-cyan": $cyan,
+  "text-green": $green
+), $text-colors );
+
+@each $color_name, $color in $text-colors {
+  .#{$color_name} {
+    color: $color !important;
   }
 }

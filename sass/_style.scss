@@ -1,6 +1,19 @@
 // LAYOUT
+html,body,.wrapper{
+    height: 100%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.main-content{
+    flex: 1;
+}
+// NAVBAR
 .navbar{
     padding: 0;
+    z-index: 1010;
 }
 .navbar-brand{
     min-width: 205px;
@@ -16,19 +29,19 @@
         .nav-link{
             text-transform: uppercase;
             font-weight: 400;
-            font-size: 18px;
-            color: $font-black;
+            font-size: 14px;
+            color: $black;
             padding: .75em .5em;
             position: relative;
             &:hover{
-                color: $font-black;
+                color: $black;
                 &:before{
                     transform: scaleX(1);
                     opacity: 1;
                     transition: all .3s ease;
                 }
                 span{
-                    color: $font-white;
+                    color: $white;
                     transition: all .2s ease;
                     text-shadow: 1px 1px 1px rgba(0,0,0,.3);
                 }
@@ -57,6 +70,27 @@
                 text-align: center;
             }
         }
+        @media (min-width: 768px){
+            .nav-link{
+                font-size: 16px;
+            }
+        }
+        @media (min-width: 992px){
+            .nav-link{
+                font-size: 18px;
+            }
+        }
+        .active{
+            .nav-link{
+                &:before{
+                    transform: scaleX(1);
+                    opacity: 1;
+                }
+                span{
+                    color: $white
+                }
+            }
+        }
         @media screen and (min-width: 1200px){
             .nav-link{
                 padding: .75em 1em;
@@ -71,7 +105,7 @@
     }
     &:hover{
         &:after{
-            border-top-color: $font-white;
+            border-top-color: $white;
         }
     }
 }
@@ -84,13 +118,13 @@
     .btn{
         border-color: #ccc;
         background-color: #fff;
-        color: $font-black;
+        color: $black;
         border-radius: 0;
     }
     .dropdown-toggle{
         &:hover{
             &:after{
-                border-top-color: $font-black;
+                border-top-color: $black;
             }
         }
     }
@@ -111,16 +145,206 @@
 }
 
 .dropdown-menu {
-    color: $font-white;
+    color: $white;
     border: 1px solid $purple;
     background-color: $purple;
     border-radius: 0;
 }
 .dropdown-item {
-    color: $font-white;
+    color: $white;
     &:hover{
-        color: $font-white;
+        color: $white;
         background-color: $green;
     }
 }
-// END LAYOUT
+
+// END NAVBAR
+
+
+// FOOTER
+.footer{
+    position: relative;
+    z-index: 1010;
+    a{
+        color: $black;
+        transition: all .3s ease;
+        &:hover{
+            color: $white;
+            text-decoration: none;
+        }
+    }
+    .cell{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    h6{
+        padding-bottom: .25rem;
+    }
+    @media (min-width: 768px){
+        h6{
+            padding-bottom: .5rem;
+        }
+    }
+    .form-control{
+        border: 0;
+    }
+}
+.bg-footer{
+    background: {
+        color: $yellow-bg-footer;
+        image: url('../assets/bg-footer.jpg');
+        size: cover;
+        position: center;
+        attachment: fixed;
+        repeat: no-repeat;
+    }
+    position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #F9B81F;
+        opacity: .8;
+    }
+}
+// END FOOTER
+
+//END LAYOUT
+
+//MARKET INFO SECTION
+.market{
+    background-image: url('../assets/market_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    color: $white;
+    &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 900;
+        background: linear-gradient(180deg,rgba($black,.03),rgba($black,.16));
+    }
+    &_info{
+        padding: 2em 1em;
+        background-color: rgba($white,.15);
+        box-shadow: 1px 1px 3px rgba($black,.15);
+        position: relative;
+        z-index: 1000;
+    }
+}
+.chart-wrapper{
+    flex-grow: 1;
+}
+//END MARKET INFO SECTION
+
+//PARTICLES JS
+canvas{
+    position: absolute;;
+    top: 0;
+}
+
+// END PARTICLES JS
+
+// LIST ITEMS
+.item{
+    background-color: $gray;
+    position: relative;
+    border-top: 4px solid transparent;
+    padding: 1em;
+    margin-bottom: 1em;
+    transition: all .5s ease;
+    &>*{
+        padding-bottom: 1em;
+    }
+    &:hover{
+        background-color: lighten($gray,3%);
+    }
+    &_status{
+        position: absolute;
+        padding: 0.5em 1.5em;
+        right: 0;
+        top: 0;
+        font-weight: 500;
+    }
+    &_price{
+        span{
+            font-weight: 500;
+        }
+    }
+    &_info{
+        display: flex;
+        align-items: baseline;
+        span{
+            vertical-align: middle;
+        }
+    }
+    &_quantity{
+        font-style: italic;
+        span{
+            font-weight: 500;
+        }
+    }
+    &_owner{
+        font-weight: 500;
+        padding-right: 1.5em;
+    }
+    &_label{
+        padding: 0 .5em;
+        font-size: .8em;
+        color: $white;
+    }
+}
+.list-items{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    &.sell{
+        .item{
+            border-top-color: $yellow;
+            &_status{
+                background-color: $yellow;
+                a{
+                    color: $darkblue;
+                }
+            }
+            &_label{
+                background-color: $lightgreen;
+            }
+        }
+    }
+    &.buy{
+        .item{
+            border-top-color: $darkblue;
+            &_status{
+                background-color: $darkblue;
+                a{
+                    color: $white;
+                }
+            }
+            &_label{
+                background-color: $lightgreen;
+            }
+        }
+    }
+}
+
+span.currency{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: {
+        image: url('../assets/icon_bitcoin.png');
+        size: 100%;
+        repeat: no-repeat;
+    }
+    vertical-align: middle;
+    margin-right: 1em;
+}
+
+// END LIST ITEMS
