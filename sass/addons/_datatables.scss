@@ -1,0 +1,95 @@
+// Datatables
+.dataTables_wrapper{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    .dataTables_scrollHeadInner{
+        width: 100% !important;
+    }
+    .dataTable{
+        width: 100% !important;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        .sorting_disabled{
+            cursor: default;
+        }
+        th{
+            background-color: #ccc;
+        }
+        td,th{
+            border-bottom: 1px solid #ccc;
+            &:not(:first-child){
+                text-align: right;
+            }
+            padding: 0.5em;
+            transition: all .3s ease;
+        }
+        td{
+            img{
+                max-width: 24px;
+                max-height: 24px;
+                margin-top: -3px;
+            }
+        }
+        tr{
+            &:hover{
+                td{
+                    background-color: #f5f5f5;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .devine{
+        display: none;
+    }
+}
+
+.link-deposit,
+.link-withdraw{
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: all .3s ease;
+    &:hover{
+        text-decoration: none;
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 575px){
+    .balance-info-wrapper{
+        .row{
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+        .dataTables_wrapper{
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .col-sm-12{
+            padding-left: 3px !important;
+            padding-right: 3px !important;
+        }
+    }
+
+}
+
+.page-item{
+    &.active{
+        .page-link{
+            &:focus{
+                background-color: $darkblue !important;
+                border-color: $darkblue !important;
+            }
+            background-color: $darkblue;
+            border-color: $darkblue;
+        }
+    }
+    .page-link{
+        color: $black;
+        transition: all .3s ease;
+    }
+}

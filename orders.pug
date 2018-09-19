@@ -1,0 +1,117 @@
+extends ./layout.pug
+
+block main-content
+    .container-fluid.mt-5
+        .container
+            ul.nav.nav-tabs(role="tablist")
+                li.nav-item
+                    a.nav-link.active.text-uppercase(data-toggle="tab" href="#pendingOrder") Pending order
+                li.nav-item
+                    a.nav-link.text-uppercase(data-toggle="tab" href="#processDeal") In process deal
+                li.nav-item
+                    a.nav-link.text-uppercase(data-toggle="tab" href="#transactionHistory") Transaction history
+            .tab-content
+                #pendingOrder.container.tab-pane.active.px-3.pt-4
+                    .row
+                        .col.text-right
+                            i.fas.fa-download.fa-2x.text-yellow.mb-2.pr-2
+                    .row
+                        table#tblPendingOrder.table-plugin
+                            thead
+                                tr
+                                    th.text-uppercase Type
+                                    th.text-uppercase.text-center Time Order
+                                    th.text-uppercase.text-right Price 
+                                    th.text-uppercase.text-right Min BTC
+                                    th.text-uppercase.text-right Max BTC
+                                    th.text-uppercase.text-right Filled Quantity
+                                    th.text-uppercase.text-right Filled Value
+                                    th.text-uppercase.text-right Status
+                                    th.text-uppercase.text-right Time filled
+                                    th.text-uppercase.text-right Action
+                            tbody
+                                tr
+                                    td.text-uppercase BUY 
+                                    td.text-center 2018-08-30 17:17:12
+                                    td.text-right 135.967.319	
+                                    td.text-right 0.1
+                                    td.text-right 0.3
+                                    td.text-right 0
+                                    td.text-right &nbsp;
+                                    td.text-right Open
+                                    td.text-right &nbsp;
+                                    td.text-right 
+                                        a.btn.btn-danger Cancel
+                #processDeal.container.tab-pane.fade.px-3.pt-4
+                    .row
+                        .col.text-right
+                            i.fas.fa-download.fa-2x.text-yellow.mb-2.pr-2
+                    .row
+                        table#tblProcessDeal.table-plugin
+                            thead
+                                tr
+                                    th.text-uppercase Type
+                                    th.text-uppercase.text-center Time Order
+                                    th.text-uppercase.text-right Price 
+                                    th.text-uppercase.text-right Min BTC
+                                    th.text-uppercase.text-right Max BTC
+                                    th.text-uppercase.text-right Filled Quantity
+                                    th.text-uppercase.text-right Filled Value
+                                    th.text-uppercase.text-right Status
+                                    th.text-uppercase.text-right Time filled
+                                    th.text-uppercase.text-right Action
+                            tbody
+                                tr
+                                    td.text-uppercase BUY 
+                                    td.text-center 2018-08-30 17:17:12
+                                    td.text-right 135.967.319	
+                                    td.text-right 0.1
+                                    td.text-right 0.3
+                                    td.text-right 0
+                                    td.text-right &nbsp;
+                                    td.text-right Open
+                                    td.text-right &nbsp;
+                                    td.text-right 
+                                        a.btn.btn-danger Cancel
+                #transactionHistory.container.tab-pane.fade.px-3.pt-4
+                    .row
+                        .col.text-right
+                            i.fas.fa-download.fa-2x.text-yellow.mb-2.pr-2
+                    .row
+                        table#tblTransactionHistory.table-plugin
+                            thead
+                                tr
+                                    th.text-uppercase Ticker Code
+                                    th.text-uppercase.text-left Transaction Type
+                                    th.text-uppercase.text-right Filled Quantity 
+                                    th.text-uppercase.text-right Filled Price
+                                    th.text-uppercase.text-right Filled Value
+                                    th.text-uppercase.text-right Transaction Time
+                            tbody
+                                -for(var i=1; i<=54; i++){
+                                    tr
+                                        td.text-uppercase VND-BTC
+                                        -if(i%3==0){
+                                            td.text-left BUY
+                                        -}else{
+                                            td.text-left SELL
+                                        -}
+                                        td.text-right 0,50000000	
+                                        td.text-right 148.252.250
+                                        td.text-right 74.126.125
+                                        td.text-right 2018-09-06 11:10:34
+                                -}
+
+block script-append
+    script.
+        $(document).ready( function () {
+            $('.table-plugin').DataTable({
+                searching: false,
+                ordering:  false,
+                info: false,
+                paging: true,
+                bLengthChange: false
+            });
+        } );
+    
+            

@@ -14,6 +14,8 @@ $lightgreen: #4CB500;
 $black: #000;
 $white: #fff;
 
+$border: #ededed;
+
 $gray: #f1f1f1;
 
 $material-colors: () !default;
@@ -41,6 +43,18 @@ $text-colors: map-merge((
 ), $text-colors );
 
 @each $color_name, $color in $text-colors {
+  .#{$color_name} {
+    color: $color !important;
+  }
+}
+
+$link-colors: () !default;
+$link-colors: map-merge((
+  "link-withdraw": $red,
+  "link-deposit": $green
+), $link-colors );
+
+@each $color_name, $color in $link-colors {
   .#{$color_name} {
     color: $color !important;
   }

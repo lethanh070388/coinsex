@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    <link href="../css/addons/datatables.min.css" rel="stylesheet"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/coinsex.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container-fluid p-0">
+        <div class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container"><a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span>BTC</span></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="#">Buy sell BTC</a></div>
+                </li>
+                <li class="nav-item active"><a class="nav-link" href="#"> <span>ETH</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>DASH</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="balance.html"> <span>Wallet</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="orders.html"> <span>Orders</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>Login</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>Register</span></a></li>
+                <div class="dropdown select-lang">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownLang">
+                    <button class="dropdown-item" type="button">English</button>
+                    <button class="dropdown-item" type="button">Combodia</button>
+                    <button class="dropdown-item" type="button">Vietnamese</button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="main-content">   
+        <div class="container-fluid mt-5">
+          <div class="container">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item"><a class="nav-link active text-uppercase" data-toggle="tab" href="#pendingOrder">Pending order</a></li>
+              <li class="nav-item"><a class="nav-link text-uppercase" data-toggle="tab" href="#processDeal">In process deal</a></li>
+              <li class="nav-item"><a class="nav-link text-uppercase" data-toggle="tab" href="#transactionHistory">Transaction history</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="container tab-pane active px-3 pt-4" id="pendingOrder">
+                <div class="row">
+                  <div class="col text-right"><i class="fas fa-download fa-2x text-yellow mb-2 pr-2"></i></div>
+                </div>
+                <div class="row">
+                  <table class="table-plugin" id="tblPendingOrder">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase">Type</th>
+                        <th class="text-uppercase text-center">Time Order</th>
+                        <th class="text-uppercase text-right">Price </th>
+                        <th class="text-uppercase text-right">Min BTC</th>
+                        <th class="text-uppercase text-right">Max BTC</th>
+                        <th class="text-uppercase text-right">Filled Quantity</th>
+                        <th class="text-uppercase text-right">Filled Value</th>
+                        <th class="text-uppercase text-right">Status</th>
+                        <th class="text-uppercase text-right">Time filled</th>
+                        <th class="text-uppercase text-right">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-uppercase">BUY </td>
+                        <td class="text-center">2018-08-30 17:17:12</td>
+                        <td class="text-right">135.967.319	</td>
+                        <td class="text-right">0.1</td>
+                        <td class="text-right">0.3</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right">&nbsp;</td>
+                        <td class="text-right">Open</td>
+                        <td class="text-right">&nbsp;</td>
+                        <td class="text-right"> <a class="btn btn-danger">Cancel</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="container tab-pane fade px-3 pt-4" id="processDeal">
+                <div class="row">
+                  <div class="col text-right"><i class="fas fa-download fa-2x text-yellow mb-2 pr-2"></i></div>
+                </div>
+                <div class="row">
+                  <table class="table-plugin" id="tblProcessDeal">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase">Type</th>
+                        <th class="text-uppercase text-center">Time Order</th>
+                        <th class="text-uppercase text-right">Price </th>
+                        <th class="text-uppercase text-right">Min BTC</th>
+                        <th class="text-uppercase text-right">Max BTC</th>
+                        <th class="text-uppercase text-right">Filled Quantity</th>
+                        <th class="text-uppercase text-right">Filled Value</th>
+                        <th class="text-uppercase text-right">Status</th>
+                        <th class="text-uppercase text-right">Time filled</th>
+                        <th class="text-uppercase text-right">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-uppercase">BUY </td>
+                        <td class="text-center">2018-08-30 17:17:12</td>
+                        <td class="text-right">135.967.319	</td>
+                        <td class="text-right">0.1</td>
+                        <td class="text-right">0.3</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right">&nbsp;</td>
+                        <td class="text-right">Open</td>
+                        <td class="text-right">&nbsp;</td>
+                        <td class="text-right"> <a class="btn btn-danger">Cancel</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="container tab-pane fade px-3 pt-4" id="transactionHistory">
+                <div class="row">
+                  <div class="col text-right"><i class="fas fa-download fa-2x text-yellow mb-2 pr-2"></i></div>
+                </div>
+                <div class="row">
+                  <table class="table-plugin" id="tblTransactionHistory">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase">Ticker Code</th>
+                        <th class="text-uppercase text-left">Transaction Type</th>
+                        <th class="text-uppercase text-right">Filled Quantity </th>
+                        <th class="text-uppercase text-right">Filled Price</th>
+                        <th class="text-uppercase text-right">Filled Value</th>
+                        <th class="text-uppercase text-right">Transaction Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">SELL</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                      <tr>
+                        <td class="text-uppercase">VND-BTC</td>
+                        <td class="text-left">BUY</td>
+                        <td class="text-right">0,50000000	</td>
+                        <td class="text-right">148.252.250</td>
+                        <td class="text-right">74.126.125</td>
+                        <td class="text-right">2018-09-06 11:10:34</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="container-fluid bg-footer py-4">
+        <div class="container footer py-4">
+          <div class="row justify-content-between">
+            <div class="cell">
+              <h6 class="font-bold pt-2">MARKET BITCOIN COINSEX</h6>
+              <div class="pb-2"> <i class="fas fa-envelope pr-1"></i>Email: <a href="mailto:team@coinsex.com">team@coinsex.com</a></div>
+              <div class="pb-4"><i class="fas fa-comments pr-1"></i><a href="#">Online support</a></div>
+            </div>
+            <div class="cell">
+              <h6 class="font-bold pt-2">FOR CLIENTS</h6>
+              <div class="pb-2"><i class="fas fa-question-circle pr-1"></i><a href="#">Frequently Asked Questions</a></div>
+              <div class="pb-4"><i class="fas fa-chevron-circle-right pr-1"></i><a href="#">Policies and Terms</a></div>
+            </div>
+            <div class="cell">
+              <h6 class="font-bold pt-2">SOCIAL MEDIA</h6>
+              <div class="pb-2"><i class="fab fa-facebook-square pr-1"></i><a href="#">Facebook</a></div>
+              <div class="pb-4"><i class="fab fa-telegram pr-1"></i><a href="#">Telegram</a></div>
+            </div>
+            <div class="cell">
+              <h6 class="font-bold pt-2">SIGN UP FOR THE NEWSLETTER</h6>
+              <div class="pb-2">Please register to receive latest news from <b>COINSEX.ORG</b></div>
+              <div class="input-group mb-3">
+                <input class="form-control" type="email" placeholder="Enter your mail" aria-label="Enter your mail" aria-describedby="button-addon2"/>
+                <div class="input-group-append">
+                  <button class="btn btn-dark" type="button" id="button-addon2">Agree</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col py-2 text-white">Designed by COINSEX.ORG. All rights reserved. © 2017</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/addons/datatables.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      $(document).ready( function () {
+          $('.table-plugin').DataTable({
+              searching: false,
+              ordering:  false,
+              info: false,
+              paging: true,
+              bLengthChange: false
+          });
+      } );
+      
+          
+    </script>
+  </body>
+</html>

@@ -41,6 +41,65 @@
         </div>
       </div>
       <main class="main-content">   
+        <div class="container-fluid mt-5 px-xs-0 balance-info-wrapper">
+          <div class="container px-xs-0">
+            <div class="row">
+              <div class="col"> 
+                <h3 class="title-3 text-uppercase">Balance info</h3>
+              </div>
+            </div>
+            <div class="row">
+              <table id="tblBalanceInfo">
+                <thead>
+                  <tr>
+                    <th>Currency</th>
+                    <th>Available Balance</th>
+                    <th>Total </th>
+                    <th>Pending Amount</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <img class="pr-1" src="../assets/BTC.png"/>BTC</td>
+                    <td>2.65437034</td>
+                    <td>2.87437034</td>
+                    <td>0.22	</td>
+                    <td> <a class="link-deposit" href="./deposit_withdraw_history.html">Deposit </a><span class="devine">| </span><a class="link-withdraw" href="./deposit_withdraw_history.html">Withdraw </a></td>
+                  </tr>
+                  <tr>
+                    <td> <img class="pr-1" src="../assets/ETH.png"/>ETH</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0	</td>
+                    <td> <a class="link-deposit" href="./deposit_withdraw_history.html">Deposit </a><span class="devine">| </span><a class="link-withdraw" href="./deposit_withdraw_history.html">Withdraw</a></td>
+                  </tr>
+                  <tr>
+                    <td> <img class="pr-1" src="../assets/VND.png"/>VND</td>
+                    <td>177,212,677</td>
+                    <td>235,903,477	</td>
+                    <td>58,690,800	</td>
+                    <td> <a class="link-deposit" href="./deposit_withdraw_history.html">Deposit </a><span class="devine">| </span><a class="link-withdraw" href="./deposit_withdraw_history.html">Withdraw</a></td>
+                  </tr>
+                  <tr>
+                    <td> <img class="pr-1" src="../assets/DASH.png"/>DASH</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0	</td>
+                    <td> <a class="link-deposit" href="./deposit_withdraw_history.html">Deposit </a><span class="devine">| </span><a class="link-withdraw" href="./deposit_withdraw_history.html">Withdraw</a></td>
+                  </tr>
+                  <tr>
+                    <td> <img class="pr-1" src="../assets/XMR.png"/>XMR</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0	</td>
+                    <td> <a class="link-deposit" href="./deposit_withdraw_history.html">Deposit </a><span class="devine">| </span><a class="link-withdraw" href="./deposit_withdraw_history.html">Withdraw                 </a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </main>
       <div class="container-fluid bg-footer py-4">
         <div class="container footer py-4">
@@ -86,5 +145,16 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/addons/datatables.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      $(document).ready( function () {
+          $('#tblBalanceInfo').DataTable({
+              searching: false,
+              ordering:  false,
+              info: false,
+              paging: false,
+              scrollX: true
+          });
+      } );
+    </script>
   </body>
 </html>

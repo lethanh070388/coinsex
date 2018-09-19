@@ -7,6 +7,8 @@ html(lang="en")
         title Layout
         //- Font Awesome
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        //- Datatable
+        link(href="../css/addons/datatables.min.css" rel="stylesheet")
         //- Bootstrap core CSS
         link(href="../css/bootstrap.min.css" rel="stylesheet")
         //- Custom style
@@ -34,10 +36,10 @@ html(lang="en")
                                     a.nav-link(href="#") 
                                         span DASH
                                 li.nav-item
-                                    a.nav-link(href="#") 
+                                    a.nav-link(href="balance.html") 
                                         span Wallet
                                 li.nav-item
-                                    a.nav-link(href="#") 
+                                    a.nav-link(href="orders.html") 
                                         span Orders
                                 li.nav-item
                                     a.nav-link(href="#") 
@@ -102,5 +104,6 @@ html(lang="en")
         script(src="../js/jquery-3.3.1.min.js")
         script(src="../js/popper.min.js")
         script(src="../js/bootstrap.min.js")
+        script(src="../js/addons/datatables.min.js")
         script(src="../js/main.js")
         block script-append

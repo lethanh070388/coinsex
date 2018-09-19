@@ -1,0 +1,85 @@
+extends ./layout.pug
+
+block main-content
+    .container-fluid.mt-5.px-xs-0.balance-info-wrapper
+        .container.px-xs-0
+            .row
+                .col 
+                    h3.title-3.text-uppercase Balance info
+            .row
+                table#tblBalanceInfo
+                    thead
+                        tr
+                            th Currency
+                            th Available Balance
+                            th Total 
+                            th Pending Amount
+                            th Action
+                    tbody
+                        tr
+                            td 
+                                img.pr-1(src="../assets/BTC.png")
+                                | BTC
+                            td 2.65437034
+                            td 2.87437034
+                            td 0.22	
+                            td 
+                                a.link-deposit(href="./deposit_withdraw_history.html") Deposit 
+                                span.devine | 
+                                a.link-withdraw(href="./deposit_withdraw_history.html") Withdraw 
+                        tr
+                            td 
+                                img.pr-1(src="../assets/ETH.png")
+                                | ETH
+                            td 0
+                            td 0
+                            td 0	
+                            td 
+                                a.link-deposit(href="./deposit_withdraw_history.html") Deposit 
+                                span.devine | 
+                                a.link-withdraw(href="./deposit_withdraw_history.html") Withdraw
+                        tr
+                            td 
+                                img.pr-1(src="../assets/VND.png")
+                                | VND
+                            td 177,212,677
+                            td 235,903,477	
+                            td 58,690,800	
+                            td 
+                                a.link-deposit(href="./deposit_withdraw_history.html") Deposit 
+                                span.devine | 
+                                a.link-withdraw(href="./deposit_withdraw_history.html") Withdraw
+                        tr
+                            td 
+                                img.pr-1(src="../assets/DASH.png")
+                                | DASH
+                            td 0
+                            td 0
+                            td 0	
+                            td 
+                                a.link-deposit(href="./deposit_withdraw_history.html") Deposit 
+                                span.devine | 
+                                a.link-withdraw(href="./deposit_withdraw_history.html") Withdraw
+                        tr
+                            td 
+                                img.pr-1(src="../assets/XMR.png")
+                                | XMR
+                            td 0
+                            td 0
+                            td 0	
+                            td 
+                                a.link-deposit(href="./deposit_withdraw_history.html") Deposit 
+                                span.devine | 
+                                a.link-withdraw(href="./deposit_withdraw_history.html") Withdraw                 
+block script-append
+    script.
+        $(document).ready( function () {
+            $('#tblBalanceInfo').DataTable({
+                searching: false,
+                ordering:  false,
+                info: false,
+                paging: false,
+                scrollX: true
+            });
+        } );
+    
