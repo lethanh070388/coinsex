@@ -41,6 +41,43 @@
         </div>
       </div>
       <main class="main-content">   
+        <div class="container-fluid mt-5 px-xs-0">
+          <div class="container px-xs-0">
+            <div class="row">
+              <div class="col"> 
+                <h3 class="title-3 text-uppercase">Buy now</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <form class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="iptAmount">Amount of BTC</label>
+                      <input class="form-control" id="iptAmount" type="number" step="0.1" aria-label="Amount of BTC"/>
+                    </div>
+                    <div class="form-group form-check">
+                      <input class="form-check-input" id="cbTransferTo" type="checkbox" aria-label="Check box for transfer BTC"/>
+                      <label class="form-check-label" for="cbTransferTo">Transfer BTC to this address/wallet (Withdraw out of Coinsex)</label>
+                    </div>
+                    <div class="form-group">   
+                      <input class="form-control" id="iptTransferTo" type="text" aria-label="Amount of BTC" disabled="disabled"/>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 d-flex justify-content-between flex-column">
+                    <div class="form-group">
+                      <label for="iptAmountMoneyPay">Amount of money to pay</label>
+                      <input class="form-control" id="iptAmountMoneyPay" type="number" aria-label="Amount of money to pay" disabled="disabled"/>
+                    </div>
+                    <div class="form-group text-center">
+                      <button class="btn btn-dark text-uppercase" type="Submit">Buy BTC</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <div class="container-fluid bg-footer py-4">
         <div class="container footer py-4">
@@ -86,5 +123,17 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/addons/datatables.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      $(function(){
+          $('#cbTransferTo').click(function(){
+              if($(this).is(':checked')){
+                  $('#iptTransferTo').attr('disabled',false);
+              }
+              else{
+                  $('#iptTransferTo').attr('disabled',true);
+              }
+          })
+      });
+    </script>
   </body>
 </html>

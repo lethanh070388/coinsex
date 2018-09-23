@@ -1,0 +1,39 @@
+extends ./layout.pug
+block main-content
+    .container-fluid.mt-5.px-xs-0
+        .container.px-xs-0
+            .row
+                .col 
+                    h3.title-3.text-uppercase Buy now
+            .row
+                .col
+                    form.row
+                        .col-sm-6
+                            .form-group
+                                label(for="iptAmount") Amount of BTC
+                                input#iptAmount.form-control(type="number" step="0.1" aria-label="Amount of BTC")
+                            .form-group.form-check
+                                input#cbTransferTo.form-check-input(type="checkbox" aria-label="Check box for transfer BTC")
+                                label(for="cbTransferTo").form-check-label Transfer BTC to this address/wallet (Withdraw out of Coinsex)
+                            .form-group    
+                                input#iptTransferTo.form-control(type="text" aria-label="Amount of BTC" disabled)
+                        .col-sm-6.d-flex.justify-content-between.flex-column
+                            .form-group
+                                label(for="iptAmountMoneyPay") Amount of money to pay
+                                input#iptAmountMoneyPay.form-control(type="number" aria-label="Amount of money to pay" disabled)
+                            .form-group.text-center
+                                button.btn.btn-dark.text-uppercase(type="Submit") Buy BTC
+block script-append
+    script.
+        $(function(){
+            $('#cbTransferTo').click(function(){
+                if($(this).is(':checked')){
+                    $('#iptTransferTo').attr('disabled',false);
+                }
+                else{
+                    $('#iptTransferTo').attr('disabled',true);
+                }
+            })
+        });
+    
+

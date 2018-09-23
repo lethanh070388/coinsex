@@ -47,25 +47,21 @@
   src: local(Open Sans Light), url("../fonts/open-sans/OpenSansLight.eot");
   src: url("../fonts/open-sans/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansLight.woff2") format("woff2"), url("../fonts/open-sans/OpenSansLight.woff") format("woff"), url("../fonts/open-sans/OpenSansLight.ttf") format("truetype");
   font-weight: 300; }
-
 @font-face {
   font-family: "Open Sans";
   src: local(Open Sans Regular), url("../fonts/open-sans/OpenSansRegular.eot");
   src: url("../fonts/open-sans/OpenSansRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansRegular.woff2") format("woff2"), url("../fonts/open-sans/OpenSansRegular.woff") format("woff"), url("../fonts/open-sans/OpenSansRegular.ttf") format("truetype");
   font-weight: 400; }
-
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/open-sans/OpenSansSemiBold.eot");
   src: url("../fonts/open-sans/OpenSansSemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansSemiBold.woff2") format("woff2"), url("../fonts/open-sans/OpenSansSemiBold.woff") format("woff"), url("../fonts/open-sans/OpenSansSemiBold.ttf") format("truetype");
   font-weight: 500; }
-
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/open-sans/OpenSansBold.eot");
   src: url("../fonts/open-sans/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansBold.woff2") format("woff2"), url("../fonts/open-sans/OpenSansBold.woff") format("woff"), url("../fonts/open-sans/OpenSansBold.ttf") format("truetype");
   font-weight: 700; }
-
 html, body, button, input, select {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -93,11 +89,9 @@ b {
 @media (min-width: 768px) {
   html, body, button, input, select {
     font-size: 14px; } }
-
 @media (min-width: 992px) {
   html, body, button, input, select {
     font-size: 16px; } }
-
 .btn {
   border-radius: 0;
   padding: .5em 1em; }
@@ -169,10 +163,8 @@ b {
 .table-plugin th, .table-plugin td {
   border: 1px solid #ededed;
   font-size: 14px; }
-
 .table-plugin th {
   border-bottom: 0; }
-
 .table-plugin .btn-danger {
   font-size: 14px; }
 
@@ -212,7 +204,6 @@ b {
 @media (max-width: 767px) {
   .devine {
     display: none; } }
-
 .link-deposit,
 .link-withdraw {
   text-decoration: none;
@@ -234,15 +225,12 @@ b {
   .balance-info-wrapper .col-sm-12 {
     padding-left: 3px !important;
     padding-right: 3px !important; } }
-
 .page-item.active .page-link {
   background-color: #033C93;
-  border-color: #033C93;
-  transition: all .3s ease; }
+  border-color: #033C93; }
   .page-item.active .page-link:focus {
     background-color: #033C93 !important;
     border-color: #033C93 !important; }
-
 .page-item .page-link {
   color: #000;
   transition: all .3s ease; }
@@ -261,7 +249,6 @@ html, body, .wrapper {
   .px-xs-0 {
     padding-left: 0 !important;
     padding-right: 0 !important; } }
-
 .navbar {
   padding: 0;
   z-index: 1010; }
@@ -330,7 +317,6 @@ html, body, .wrapper {
 .dropdown-toggle:after {
   z-index: 1000;
   position: relative; }
-
 .dropdown-toggle:hover:after {
   border-top-color: #fff; }
 
@@ -353,9 +339,9 @@ html, body, .wrapper {
     padding-top: .5em; }
     .select-lang .dropdown-menu {
       left: .5em; }
+
   .bg-light .navbar-nav {
     padding-bottom: 0; } }
-
 .dropdown-menu {
   color: #fff;
   border: 1px solid purple;
@@ -404,7 +390,7 @@ html, body, .wrapper {
     right: 0;
     bottom: 0;
     background: #F9B81F;
-    opacity: .8; }
+    opacity: .92; }
 
 .market {
   background-image: url("../assets/market_bg.png");
@@ -500,3 +486,5 @@ span.currency {
   background-repeat: no-repeat;
   vertical-align: middle;
   margin-right: 1em; }
+
+/*# sourceMappingURL=coinsex.css.map */
