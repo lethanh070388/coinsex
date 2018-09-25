@@ -1,28 +1,84 @@
 extends ./layout.pug
 block main-content
-    .container-fluid.mt-5.px-xs-0
-        .container.px-xs-0
-            .row
-                .col 
-                    h3.title-3.text-uppercase Buy now
-            .row
+    .container.mt-5.px-sm-0
+        .row
+            .col 
+                h3.title-3.text-uppercase Buy now
+        .row
+            .col
+                form.row
+                    .col-sm-6
+                        .form-group
+                            label(for="iptAmount") Amount of BTC
+                            input#iptAmount.form-control(type="number" step="0.1" aria-label="Amount of BTC")
+                        .form-group.form-check
+                            input#cbTransferTo.form-check-input(type="checkbox" aria-label="Check box for transfer BTC")
+                            label(for="cbTransferTo").form-check-label Transfer BTC to this address/wallet (Withdraw out of Coinsex)
+                        .form-group    
+                            input#iptTransferTo.form-control(type="text" disabled)
+                    .col-sm-6.d-flex.justify-content-between.flex-column
+                        .form-group
+                            label(for="iptAmountMoneyPay") Amount of money to pay
+                            input#iptAmountMoneyPay.form-control(type="number" aria-label="Amount of money to pay" disabled)
+                        .form-group.text-center
+                            button.btn.btn-dark.text-uppercase(type="Submit") Buy BTC
+        .container.info.my-4
+            .row.info_header
                 .col
-                    form.row
-                        .col-sm-6
-                            .form-group
-                                label(for="iptAmount") Amount of BTC
-                                input#iptAmount.form-control(type="number" step="0.1" aria-label="Amount of BTC")
-                            .form-group.form-check
-                                input#cbTransferTo.form-check-input(type="checkbox" aria-label="Check box for transfer BTC")
-                                label(for="cbTransferTo").form-check-label Transfer BTC to this address/wallet (Withdraw out of Coinsex)
-                            .form-group    
-                                input#iptTransferTo.form-control(type="text" aria-label="Amount of BTC" disabled)
-                        .col-sm-6.d-flex.justify-content-between.flex-column
-                            .form-group
-                                label(for="iptAmountMoneyPay") Amount of money to pay
-                                input#iptAmountMoneyPay.form-control(type="number" aria-label="Amount of money to pay" disabled)
-                            .form-group.text-center
-                                button.btn.btn-dark.text-uppercase(type="Submit") Buy BTC
+                    h6.title-6.text-uppercase.mb-0 Settlement infomation
+            .row.info_content
+                .col-sm-6
+                    .row
+                        .col-6
+                            .name Buy from
+                        .col-6
+                            .value.text-red Jully
+                    .row
+                        .col-6
+                            .name Price
+                        .col-6
+                            .value 149,625,901
+                    .row
+                        .col-6        
+                            .name Sale volume
+                        .col-6
+                            .value 0.1
+                    .row
+                        .col-6
+                            .name Payment methods
+                        .col-6
+                            .value Bank transfer
+                    .row
+                        .col-6
+                            .name Bank
+                        .col-6
+                            .value Vietcombank (VCB)
+                .col-sm-6.info_content
+                    .row
+                        .col-6
+                            .name Account number
+                        .col-6
+                            .value 0791000054270
+                    .row
+                        .col-6
+                            .name Account name
+                        .col-6
+                            .value.text-uppercase Nguyen Vinh Hung
+                    .row
+                        .col-6        
+                            .name Contents of the transfer
+                        .col-6
+                            .value 13CF8885BD
+                    .row
+                        .col-6
+                            .name Location
+                        .col-6
+                            .value Vietname
+                    .row
+                        .col-6
+                            .name The time allowed
+                        .col-6
+                            .value 15 Minutes
 block script-append
     script.
         $(function(){
@@ -35,5 +91,4 @@ block script-append
                 }
             })
         });
-    
 

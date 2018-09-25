@@ -1,0 +1,136 @@
+extends ./layout.pug
+
+block main-content
+    .container-fluid.mt-5
+        .container
+            ul.nav.nav-tabs(role="tablist")
+                li.nav-item
+                    a.nav-link.active.text-uppercase(data-toggle="tab" href="#buyNow") Buy now
+                li.nav-item
+                    a.nav-link.text-uppercase(data-toggle="tab" href="#sellNow") Sell now
+            .tab-content
+                #buyNow.container.tab-pane.active.px-3.py-4
+                    form#frmBuyNow.form(action="#")
+                        .row
+                            .col-md-7.d-flex.flex-column
+                                .row.px-15
+                                    .col.form_header
+                                        h5.title-5.text-uppercase.mb-0 Price (in VND)
+                                .row.px-15.flex-grow-1
+                                    .col.form_content.pt-4
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label USDVND (Buyer can adjust)
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Price of BTC (buyer pay)
+                                            .col-sm-6
+                                                input.form-control(type="text" disabled)
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Price of BTC (seller receive)
+                                            .col-sm-6
+                                                input.form-control(type="text" disabled)
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label TRADING DESK (references)
+                                            .col-sm-6
+                                                select.form-control.custom-select
+                                                    option(value="bitstamp") Bitstamp
+                                                    option(value="bitfinex") Bitfinex
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Best BID (highest BID price)
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                            .col-md-5.d-flex.flex-column
+                                .row.px-15
+                                    .col.form_header
+                                        h5.title-5.text-uppercase.mb-0 Limit
+                                .row.px-15.flex-grow-1
+                                    .col.form_content.pt-4
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Min BTC amount
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Max BTC amount
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Clearing Bank
+                                            .col-sm-6
+                                                select.form-control.custom-select
+                                                    option(value="vcb") Vietcombank
+                                                    option(value="vpb") VPBank
+                                                    option(value="msb") Maritime bank
+                                        .form-group.text-center.mt-5
+                                             button.btn.btn-order.text-uppercase(type="Submit") Create buy order
+                #sellNow.container.tab-pane.fade.px-3.py-4
+                    form#frmSellNow.form(action="#")
+                        .row
+                            .col-md-7.d-flex.flex-column
+                                .row.px-15
+                                    .col.form_header
+                                        h5.title-5.text-uppercase.mb-0 Price (in VND)
+                                .row.px-15.flex-grow-1
+                                    .col.form_content.pt-4
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label USDVND (Buyer can adjust)
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Price of BTC (buyer pay)
+                                            .col-sm-6
+                                                input.form-control(type="text" disabled)
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Price of BTC (seller receive)
+                                            .col-sm-6
+                                                input.form-control(type="text" disabled)
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label TRADING DESK (references)
+                                            .col-sm-6
+                                                select.form-control.custom-select
+                                                    option(value="bitstamp") Bitstamp
+                                                    option(value="bitfinex") Bitfinex
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Best BID (highest BID price)
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                            .col-md-5.d-flex.flex-column
+                                .row.px-15
+                                    .col.form_header
+                                        h5.title-5.text-uppercase.mb-0 Limit
+                                .row.px-15.flex-grow-1
+                                    .col.form_content.pt-4
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Min BTC amount
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Max BTC amount
+                                            .col-sm-6
+                                                input.form-control(type="text")
+                                        .row.form-group
+                                            .col-sm-6.d-flex.align-items-center
+                                                label Clearing Bank
+                                            .col-sm-6
+                                                select.form-control.custom-select
+                                                    option(value="vcb") Vietcombank
+                                                    option(value="vpb") VPBank
+                                                    option(value="msb") Maritime bank
+                                        .form-group.text-center.mt-5
+                                             button.btn.btn-order.text-uppercase(type="Submit") Create sell order
+        

@@ -16,6 +16,19 @@ html,body,.wrapper{
         padding-right: 0 !important;
     }
 }
+@media (max-width: 767px){
+    .px-sm-0{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+.px-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.img-small{
+    max-width: 225px;
+}
 // NAVBAR
 .navbar{
     padding: 0;

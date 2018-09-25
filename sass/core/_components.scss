@@ -11,7 +11,8 @@
 }
 .btn-sell,
 .btn-buy,
-.btn-dark{
+.btn-dark,
+.btn-confirm{
     @extend %btn-normal;
 }
 .btn-buy{
@@ -37,8 +38,27 @@
         background-color: lighten($darkblue,3%);
     }
 }
+.btn-copy{
+    padding: .375em 1em;
+}
+.btn-confirm{
+    padding: .375em 1em;
+    background-color: $yellow;
+    color: $black;
+    &:hover{
+        background-color: lighten($yellow,3%);
+    }
+}
 .btn-danger{
     color: $white !important;
+}
+.btn-order{
+    padding: .375em 1em;
+    background-color: $form-button;
+    font-weight: 500;
+    &:hover{
+        background-color: lighten($form-button,6%);
+    }
 }
 .form-control{
     border-radius: 0;
@@ -49,7 +69,7 @@
 
 // TABS
 .nav-tabs{
-    border-bottom-color: $border;
+    border-bottom-color: $purple;
     .nav-link{
         border-top-left-radius: 0;
         border-top-right-radius: 0;
@@ -58,9 +78,13 @@
         position: relative;
         margin-right: 2px;
         top: 1px;
+        border-bottom-color: $purple;
         &.active{
-            border-color: $border $border #fff;
+            border-color: $purple $purple #fff;
             color: $black;
+            &:hover{
+                border-color: $purple $purple #fff;
+            }
             &:before{
                 content: '';
                 position: absolute;
@@ -72,13 +96,29 @@
             }
         }
         &:hover{
-            border-color: lignten($border,3%);
+            border-color: $border;
+            border-bottom-color: $purple;
             background-color: lignten($border,3%);
         }
     }
+    .nav-item{
+        margin-bottom: 0;
+    }
+}
+.tab-content{
+    position: relative;
+    &:after{
+        content: '';
+        width: 100%;
+        height: 2px;
+        bottom: -1px;
+        left: 0;
+        background-color: $purple;
+        position: absolute;
+    }
 }
 .tab-pane{
-    border-color: $border;
+    border-color: $purple;
     border-style: solid;
     border-width: 0 1px 1px;
 }
@@ -107,3 +147,70 @@
     cursor: pointer;
 }
 // END ICONS
+
+// INFO
+.info{
+    padding-left: -15px;
+    padding-right: -15px;
+    &_header{
+        color: $white;
+        background-color: $info-header;
+        h6{
+            font-weight: 500;
+        }
+    }
+    &_content{
+        background-color: $info-content;
+    }
+    h6,.name,.value{
+        padding-top: .6em;
+        padding-bottom: .6em;
+    }
+    .name{
+        padding-left: 1em;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin-top: -0.3em;
+            left: 0;
+            border-width: .3em 0 .3em .3em;
+            border-style: solid;
+            border-color: transparent $info-arrow;
+        }
+    }
+}
+@media (max-width: 767px){
+    .info{
+        &_content{
+            .col-6{
+                padding-right: 0;
+            }
+        }
+    }
+}
+// END INFO
+
+// FORM BUY SELL NOW
+.form{
+    &_header{
+        background-color: $form-header;
+        color: $black;
+        h5{
+            padding-top: .6em;
+            padding-bottom: .6em;
+            font-weight: 500;
+        }
+    }
+    &_content{
+        background-color: $form-content;
+    }
+}
+#frmSellNow{
+    .form_header{
+        background-color: $darkblue;
+        color: $white;
+    }
+}
+// END FORM BUY SELL NOW

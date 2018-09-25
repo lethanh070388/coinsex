@@ -6,6 +6,7 @@ $darkblue: #033C93;
 $cyan: #1E9FF2;
 $oceanblue: #36c6d3;
 $red: #FF2A00;
+$grey: #737373;
 
 // Dropdown item hover
 $green: #1ABC90;
@@ -17,6 +18,16 @@ $white: #fff;
 $border: #ededed;
 
 $gray: #f1f1f1;
+
+// Info
+$info-header: #40A2C2;
+$info-content: #E6F4F1;
+$info-arrow: #4F7C84;
+
+// Form
+$form-header: $yellow;
+$form-content: $border;
+$form-button: $yellow;
 
 $material-colors: () !default;
 $material-colors: map-merge((
@@ -39,7 +50,8 @@ $text-colors: map-merge((
   "text-red": $red,
   "text-yellow": $yellow,
   "text-cyan": $cyan,
-  "text-green": $green
+  "text-green": $green,
+  "text-grey": $grey
 ), $text-colors );
 
 @each $color_name, $color in $text-colors {
