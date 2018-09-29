@@ -1,0 +1,159 @@
+extends ./dashboard.pug
+block content
+    .container.my-5
+        ul.nav.nav-tabs(role="tablist")
+            li.nav-item
+                a.nav-link.active.text-uppercase(data-toggle="tab" href="#securityF2A") Security(F2A)
+            li.nav-item
+                a.nav-link.text-uppercase(data-toggle="tab" href="#notification") Notification
+            li.nav-item
+                a.nav-link.text-uppercase(data-toggle="tab" href="#loginHistory") Login history
+        .tab-content
+            #securityF2A.container.tab-pane.active.px-3.py-4
+                .row
+                    .col-sm-6
+                        .info-wrapper.p-4.mb-4
+                            h5.font-bold Two Factor Setup
+                            p To setup two factor authentication you first need to download Google Authenticator:
+                            p 
+                                a(href="#")  Google Authenticator for Android (Play Store)
+                            p 
+                                a(href="#") Google Authenticator for iOS (Apple App Store)
+                            p Then scan the below barcode or, if you are not able to scan the barcode, you can enter the "Security Key" manually.
+                            h6.font-bold Security Key: 
+                            div JNKVQRBVJBITOQZRKRJDEN2I 
+                                i (Time Based Code)
+                            p.text-center.mt-2
+                                img.w-100.max-300(src="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=otpauth%3A%2F%2Ftotp%2Fabc%3Fsecret%3DJNKVQRBVJBITOQZRKRJDEN2I%26issuer%3DCoin%2524Ex")
+                            p
+                                small.badge.badge-danger.align-middle Important
+                                span.align-middle.pl-1 Save this secret code for future reference
+                            p
+                                i Note: No Google account is required to use Google Authenticator; skip any Google logins
+                    .col-sm-6
+                        .info-wrapper.p-4
+                            h5.font-bold Account Security
+                            p Two Factor Authentication
+                            .form-group
+                                .form-check.form-check-inline.align-items-baseline
+                                    label.form-check-label Enable Two-Factor
+                                .form-check.form-check-inline.align-items-baseline
+                                    input.form-check-input#rdoOn(type="radio" name="onoff" value="on")
+                                    label.form-check-label(for="rdoOn") On
+                                .form-check.form-check-inline.align-items-baseline
+                                    input.form-check-input#rdoOff(type="radio" name="onoff" value="off")
+                                    label.form-check-label(for="rdoOff") Off
+                            label Enter 2FA Code
+                            .input-group.mb-3
+                                .input-group-prepend
+                                    button.btn.btn-copy#depositAddress(type="button")
+                                        i.far.fa-copy
+                                    input.form-control(type="text" aria-label="Enter 2FA Code" aria-describedby="enter2FACode")
+                            .text-left
+                                button.btn.btn-confirm(type="button") Submit
+                                button.btn.btn-dark(type="button") Cancel
+                        .info-wrapper.p-4.mt-4
+                            h5.font-bold Google Authenticator Guide
+                            ol
+                                li Install Google Authenticator for Android or Apple and open Google Authenticator
+                                li Go to 
+                                    span.badge.badge-info Menu 
+                                    | &nbsp;&nbsp;&rarr;&nbsp;&nbsp;
+                                    span.badge.badge-info Setup Account
+                                li Choose 
+                                    span.badge.badge-info Scan a barcode 
+                                    | option, and scan the barcode shown on this page
+                                li 
+                                    i 
+                                        b If you are unable to scan the barcode: 
+                                        | Choose 
+                                        span.badge.badge-info Enter provided key 
+                                        | and type in the "Security Key"
+                                li A six digit number will now appear in your Google Authenticator app home screen, enter this code into the 2FA form on this page
+                                li Every time you login to coinsex.org you must enter the new 2FA code from your Google Authenticator into the 2FA box on the login form
+            #notification.container.tab-pane.fade.px-3.py-4
+                .row
+                    .col-md-5.mx-auto
+                        form#frmNotify
+                            .form-group.text-center
+                                h5.font-bold Notification via Email
+                            .form-line.d-flex.justify-content-between.mb-2
+                                span When new deal occurs
+                                label.switch
+                                    input(type="checkbox" checked)
+                                    span.slider.round
+                                    input(type="hidden" name="name" value="false")
+                            .form-line.d-flex.justify-content-between.mb-2
+                                span When balance changes
+                                label.switch
+                                    input(type="checkbox")
+                                    span.slider.round
+                                    input(type="hidden" name="name" value="false")
+                            .form-line.d-flex.justify-content-between.mb-2
+                                span Transaction messages
+                                label.switch
+                                    input(type="checkbox" checked)
+                                    span.slider.round
+                                    input(type="hidden" name="name" value="false")
+                            .form-line.d-flex.justify-content-between.mb-4
+                                span Price receive Notification
+                                label.switch
+                                    input(type="checkbox")
+                                    span.slider.round
+                                    input(type="hidden" name="name" value="false")
+                            .form-group.text-center
+                                h5.font-bold Notification via Phone
+                            .form-line.d-flex.justify-content-between.mb-2
+                                span New transactions
+                                label.switch
+                                    input(type="checkbox")
+                                    span.slider.round
+                                    input(type="hidden" name="name" value="false")
+                            .form-line.d-flex.justify-content-between.mb-4
+                                span Settlement deal
+                                label.switch
+                                    input(type="checkbox")
+                                    span.slider.round
+                                    input(type="hidden" name="name" value="false")
+                            .form-group.text-center
+                                h5.font-bold Show info
+                            .form-line.d-flex.justify-content-between.mb-4
+                                span Is public statistics info
+                                label.switch
+                                    input(type="checkbox")
+                                    span.slider.round
+                                    input(type="hidden" name="name" value="false")
+                            .text-center
+                                button.btn.btn-confirm(type="button") Save changes
+            #loginHistory.container.tab-pane.fade.px-3.pt-4
+                .row
+                    table#tblLoginHistory.table-plugin
+                        thead
+                            tr
+                                th.text-uppercase #
+                                th.text-uppercase.text-left IP 
+                                th.text-uppercase.text-left Location
+                                th.text-uppercase.text-left Time
+                        tbody
+                            -for(var i=1; i<=54; i++){
+                                tr
+                                    td= i
+                                    td.text-left 125.214.56.4
+                                    -if(i%3==0){
+                                        td.text-left Ho Chi Minh, Vietnam
+                                    -}else{
+                                        td.text-left Ha Noi, Vietnam
+                                    -}
+                                    td.text-left 2018-09-06 11:10:34
+                            -}
+block script-append
+    script.
+        $(document).ready( function () {
+            $('#tblLoginHistory').DataTable({
+                searching: false,
+                ordering:  false,
+                info: false,
+                paging: true,
+                bLengthChange: false
+            });
+        } );

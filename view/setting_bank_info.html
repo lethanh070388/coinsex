@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    <link href="../css/addons/datatables.min.css" rel="stylesheet"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/coinsex.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container-fluid p-0">
+        <div class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container"><a class="navbar-brand" href="./index.html"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span>BTC</span></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="./buysellbtc.html">Buy sell BTC</a></div>
+                </li>
+                <li class="nav-item active"><a class="nav-link" href="#"> <span>ETH</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>DASH</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="balance.html"> <span>Wallet</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="orders.html"> <span>Orders</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>Login</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>Register</span></a></li>
+                <div class="dropdown select-lang">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownLang">
+                    <button class="dropdown-item" type="button">English</button>
+                    <button class="dropdown-item" type="button">Combodia</button>
+                    <button class="dropdown-item" type="button">Vietnamese</button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="main-content">   
+        <div class="container-fluid px-0">
+          <aside class="main-sidebar user">
+            <div class="toggle"><i class="fas fa-caret-right"></i></div>
+            <div class="user_avatar"><img class="rounded-circle" src="../assets/user2-160x160.jpg" alt=""/></div>
+            <div class="user_alias mb-3">
+              <h5 class="title-5 text-center py-2">User alias</h5>
+            </div>
+            <div class="user_info mb-3"><a class="link-arrow" href="./setting_personal.html">
+                <div class="fas fa-user-circle icon"></div><span>Personal Data</span></a></div>
+            <div class="user_password mb-3"><a class="link-arrow" href="./setting_password.html">
+                <div class="fas fa-key icon"></div><span>Password</span></a></div>
+            <div class="user_bank mb-3"><a class="link-arrow" href="./setting_bank_info.html">
+                <div class="fas fa-credit-card icon"></div><span>Bank Info</span></a></div>
+            <div class="user_identity mb-3"><a class="link-arrow" href="./setting_identity.html">
+                <div class="fas fa-id-card icon"></div><span>Identity Verified</span></a></div>
+            <div class="user_setting mb-3"><a class="link-arrow" href="./setting_general.html">
+                <div class="fas fa-cog icon"></div><span>Settings</span></a></div>
+          </aside>
+          <main class="content-wrapper">
+            <div class="container mt-5">
+              <div class="row account-table">
+                <div class="col">
+                  <table class="table table-stripped" id="tblAccount">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Beneficiary</th>
+                        <th>Account number</th>
+                        <th>Bank name</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td class="text-uppercase">Chu Minh</td>
+                        <td>123456</td>
+                        <td>VPBank(VPB)</td>
+                        <td><a class="btn-del" href="#"><i class="far fa-trash-alt"></i></a></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td class="text-uppercase">Tran Hoang Duy Son</td>
+                        <td>04001010891976</td>
+                        <td>Maritime Bank(MSB)</td>
+                        <td><a class="btn-del" href="#"><i class="far fa-trash-alt"></i></a></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td class="text-uppercase">Tran Duy Minh</td>
+                        <td>071023678</td>
+                        <td>Vietcombank(VCB)</td>
+                        <td><a class="btn-del" href="#"><i class="far fa-trash-alt"></i></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="text-right">
+                    <button class="btn btn-confirm" id="btnAddAccount" type="button">Add account</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row account-new d-none">
+                <div class="col">
+                  <form class="row" id="frmNewAccunt" action="#">
+                    <div class="col-md-6 mx-auto">
+                      <div class="form-group">
+                        <label>Bank name</label>
+                        <select class="form-control custom-select">
+                          <option value="vcb">Vietcombank</option>
+                          <option value="vpb">VPBank</option>
+                          <option value="msb">Maritime bank</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Account name</label>
+                        <input class="form-control" type="text"/>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                      <div class="form-group">
+                        <label>Account number</label>
+                        <input class="form-control" type="text"/>
+                      </div>
+                      <div class="form-group">
+                        <label>Brand</label>
+                        <input class="form-control" type="text"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="text-right">
+                        <button class="btn btn-confirm" id="btnNewAccount" type="submit" data-toggle="modal" data-target="#successModal">Add new</button>
+                        <button class="btn btn-dark" type="button">Cancel</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="modal modal-success fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="successModalLabel">Confirmation</h5>
+                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                          <div>Bank account added successfully</div>
+                        </div>
+                        <div class="modal-footer text-right">
+                          <button class="btn btn-confirm" type="button" data-dismiss="modal">OK</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal modal-error fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                          <div>Bank account added successfully</div>
+                        </div>
+                        <div class="modal-footer text-right">
+                          <button class="btn btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </main>
+    </div>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/addons/datatables.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      $(function(){
+          $('#btnAddAccount').click(function(){
+              $('.account-table').hide('fast',function(){
+                  $('.account-new').removeClass('d-none');
+              })
+          });
+      
+          $('#btnNewAccount').click(function(e){
+              e.preventDefault();
+              var selectVal = $('#frmNewAccunt select option:selected').text();
+              var inputs = $('#frmNewAccunt input'), accountName, accountNum, brand, tr, count;
+              var table = $('#tblAccount tbody');
+              count = Number($('#tblAccount tbody tr:last-child td:first-child').text())+1;
+              accountName = inputs[0].value;
+              accountNum = inputs[1].value;
+              brand = inputs[2].value;
+              console.log(selectVal+' '+accountName+' '+accountNum+' '+brand);
+              tr = $("<tr />", {}).appendTo(table);
+              $("<td />", {
+                  "text": count
+              }).appendTo(tr);
+      
+              $("<td />", {
+                  "class": 'text-uppercase',
+                  "text": accountName
+              }).appendTo(tr);
+      
+              $("<td />", {
+                  "text": accountNum
+              }).appendTo(tr);
+      
+              $("<td />", {
+                  "text": selectVal
+              }).appendTo(tr);
+      
+               $("<td />", {
+                  "html": '<a href="#" class="btn-del"><i class="far fa-trash-alt"></i></a>'
+              }).appendTo(tr);
+      
+              $('.account-new').addClass('d-none');
+              $('.account-table').show('fast');
+          });
+      });
+    </script>
+  </body>
+</html>

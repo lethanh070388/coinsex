@@ -74,7 +74,14 @@
             padding-right: 3px !important;
         }
     }
-
+    .dataTables_wrapper{
+        .dataTable{
+            td,th{
+                padding: 0.25em;
+                transition: all .3s ease;
+            }
+        }
+    }
 }
 
 .page-item{

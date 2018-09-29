@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    <link href="../css/addons/datatables.min.css" rel="stylesheet"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/coinsex.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container-fluid p-0">
+        <div class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container"><a class="navbar-brand" href="./index.html"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span>BTC</span></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="./buysellbtc.html">Buy sell BTC</a></div>
+                </li>
+                <li class="nav-item active"><a class="nav-link" href="#"> <span>ETH</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>DASH</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="balance.html"> <span>Wallet</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="orders.html"> <span>Orders</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>Login</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> <span>Register</span></a></li>
+                <div class="dropdown select-lang">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownLang">
+                    <button class="dropdown-item" type="button">English</button>
+                    <button class="dropdown-item" type="button">Combodia</button>
+                    <button class="dropdown-item" type="button">Vietnamese</button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="main-content">   
+        <div class="container-fluid px-0">
+          <aside class="main-sidebar user">
+            <div class="toggle"><i class="fas fa-caret-right"></i></div>
+            <div class="user_avatar"><img class="rounded-circle" src="../assets/user2-160x160.jpg" alt=""/></div>
+            <div class="user_alias mb-3">
+              <h5 class="title-5 text-center py-2">User alias</h5>
+            </div>
+            <div class="user_info mb-3"><a class="link-arrow" href="./setting_personal.html">
+                <div class="fas fa-user-circle icon"></div><span>Personal Data</span></a></div>
+            <div class="user_password mb-3"><a class="link-arrow" href="./setting_password.html">
+                <div class="fas fa-key icon"></div><span>Password</span></a></div>
+            <div class="user_bank mb-3"><a class="link-arrow" href="./setting_bank_info.html">
+                <div class="fas fa-credit-card icon"></div><span>Bank Info</span></a></div>
+            <div class="user_identity mb-3"><a class="link-arrow" href="./setting_identity.html">
+                <div class="fas fa-id-card icon"></div><span>Identity Verified</span></a></div>
+            <div class="user_setting mb-3"><a class="link-arrow" href="./setting_general.html">
+                <div class="fas fa-cog icon"></div><span>Settings</span></a></div>
+          </aside>
+          <main class="content-wrapper">
+            <div class="container my-5">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active text-uppercase" data-toggle="tab" href="#securityF2A">Security(F2A)</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase" data-toggle="tab" href="#notification">Notification</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase" data-toggle="tab" href="#loginHistory">Login history</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="container tab-pane active px-3 py-4" id="securityF2A">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="info-wrapper p-4 mb-4">
+                        <h5 class="font-bold">Two Factor Setup</h5>
+                        <p>To setup two factor authentication you first need to download Google Authenticator:</p>
+                        <p> <a href="#"> Google Authenticator for Android (Play Store)</a></p>
+                        <p> <a href="#">Google Authenticator for iOS (Apple App Store)</a></p>
+                        <p>Then scan the below barcode or, if you are not able to scan the barcode, you can enter the "Security Key" manually.</p>
+                        <h6 class="font-bold">Security Key: </h6>
+                        <div>JNKVQRBVJBITOQZRKRJDEN2I <i>(Time Based Code)</i></div>
+                        <p class="text-center mt-2"><img class="w-100 max-300" src="http://chart.googleapis.com/chart?cht=qr&amp;chs=300x300&amp;chl=otpauth%3A%2F%2Ftotp%2Fabc%3Fsecret%3DJNKVQRBVJBITOQZRKRJDEN2I%26issuer%3DCoin%2524Ex"/></p>
+                        <p><small class="badge badge-danger align-middle">Important</small><span class="align-middle pl-1">Save this secret code for future reference</span></p>
+                        <p><i>Note: No Google account is required to use Google Authenticator; skip any Google logins</i></p>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="info-wrapper p-4">
+                        <h5 class="font-bold">Account Security</h5>
+                        <p>Two Factor Authentication</p>
+                        <div class="form-group">
+                          <div class="form-check form-check-inline align-items-baseline">
+                            <label class="form-check-label">Enable Two-Factor</label>
+                          </div>
+                          <div class="form-check form-check-inline align-items-baseline">
+                            <input class="form-check-input" id="rdoOn" type="radio" name="onoff" value="on"/>
+                            <label class="form-check-label" for="rdoOn">On</label>
+                          </div>
+                          <div class="form-check form-check-inline align-items-baseline">
+                            <input class="form-check-input" id="rdoOff" type="radio" name="onoff" value="off"/>
+                            <label class="form-check-label" for="rdoOff">Off</label>
+                          </div>
+                        </div>
+                        <label>Enter 2FA Code</label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-copy" id="depositAddress" type="button"><i class="far fa-copy"></i></button>
+                            <input class="form-control" type="text" aria-label="Enter 2FA Code" aria-describedby="enter2FACode"/>
+                          </div>
+                        </div>
+                        <div class="text-left">
+                          <button class="btn btn-confirm" type="button">Submit</button>
+                          <button class="btn btn-dark" type="button">Cancel</button>
+                        </div>
+                      </div>
+                      <div class="info-wrapper p-4 mt-4">
+                        <h5 class="font-bold">Google Authenticator Guide</h5>
+                        <ol>
+                          <li>Install Google Authenticator for Android or Apple and open Google Authenticator</li>
+                          <li>Go to <span class="badge badge-info">Menu </span>&nbsp;&nbsp;&rarr;&nbsp;&nbsp;<span class="badge badge-info">Setup Account</span></li>
+                          <li>Choose <span class="badge badge-info">Scan a barcode </span>option, and scan the barcode shown on this page</li>
+                          <li> <i> <b>If you are unable to scan the barcode: </b>Choose <span class="badge badge-info">Enter provided key </span>and type in the "Security Key"</i></li>
+                          <li>A six digit number will now appear in your Google Authenticator app home screen, enter this code into the 2FA form on this page</li>
+                          <li>Every time you login to coinsex.org you must enter the new 2FA code from your Google Authenticator into the 2FA box on the login form</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container tab-pane fade px-3 py-4" id="notification">
+                  <div class="row">
+                    <div class="col-md-5 mx-auto">
+                      <form id="frmNotify">
+                        <div class="form-group text-center">
+                          <h5 class="font-bold">Notification via Email</h5>
+                        </div>
+                        <div class="form-line d-flex justify-content-between mb-2"><span>When new deal occurs</span>
+                          <label class="switch">
+                            <input type="checkbox" checked="checked"/><span class="slider round"></span>
+                            <input type="hidden" name="name" value="false"/>
+                          </label>
+                        </div>
+                        <div class="form-line d-flex justify-content-between mb-2"><span>When balance changes</span>
+                          <label class="switch">
+                            <input type="checkbox"/><span class="slider round"></span>
+                            <input type="hidden" name="name" value="false"/>
+                          </label>
+                        </div>
+                        <div class="form-line d-flex justify-content-between mb-2"><span>Transaction messages</span>
+                          <label class="switch">
+                            <input type="checkbox" checked="checked"/><span class="slider round"></span>
+                            <input type="hidden" name="name" value="false"/>
+                          </label>
+                        </div>
+                        <div class="form-line d-flex justify-content-between mb-4"><span>Price receive Notification</span>
+                          <label class="switch">
+                            <input type="checkbox"/><span class="slider round"></span>
+                            <input type="hidden" name="name" value="false"/>
+                          </label>
+                        </div>
+                        <div class="form-group text-center">
+                          <h5 class="font-bold">Notification via Phone</h5>
+                        </div>
+                        <div class="form-line d-flex justify-content-between mb-2"><span>New transactions</span>
+                          <label class="switch">
+                            <input type="checkbox"/><span class="slider round"></span>
+                            <input type="hidden" name="name" value="false"/>
+                          </label>
+                        </div>
+                        <div class="form-line d-flex justify-content-between mb-4"><span>Settlement deal</span>
+                          <label class="switch">
+                            <input type="checkbox"/><span class="slider round"></span>
+                            <input type="hidden" name="name" value="false"/>
+                          </label>
+                        </div>
+                        <div class="form-group text-center">
+                          <h5 class="font-bold">Show info</h5>
+                        </div>
+                        <div class="form-line d-flex justify-content-between mb-4"><span>Is public statistics info</span>
+                          <label class="switch">
+                            <input type="checkbox"/><span class="slider round"></span>
+                            <input type="hidden" name="name" value="false"/>
+                          </label>
+                        </div>
+                        <div class="text-center">
+                          <button class="btn btn-confirm" type="button">Save changes</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="container tab-pane fade px-3 pt-4" id="loginHistory">
+                  <div class="row">
+                    <table class="table-plugin" id="tblLoginHistory">
+                      <thead>
+                        <tr>
+                          <th class="text-uppercase">#</th>
+                          <th class="text-uppercase text-left">IP </th>
+                          <th class="text-uppercase text-left">Location</th>
+                          <th class="text-uppercase text-left">Time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>11</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>12</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>14</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>15</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>16</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>17</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>18</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>19</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>20</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>21</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>22</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>23</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>24</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>25</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>26</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>27</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>28</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>29</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>30</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>31</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>32</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>33</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>34</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>35</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>36</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>37</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>38</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>39</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>40</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>41</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>42</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>43</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>44</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>45</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>46</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>47</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>48</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>49</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>50</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>51</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>52</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>53</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ha Noi, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                        <tr>
+                          <td>54</td>
+                          <td class="text-left">125.214.56.4</td>
+                          <td class="text-left">Ho Chi Minh, Vietnam</td>
+                          <td class="text-left">2018-09-06 11:10:34</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </main>
+    </div>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/addons/datatables.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      $(document).ready( function () {
+          $('#tblLoginHistory').DataTable({
+              searching: false,
+              ordering:  false,
+              info: false,
+              paging: true,
+              bLengthChange: false
+          });
+      } );
+    </script>
+  </body>
+</html>

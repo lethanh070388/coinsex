@@ -1,0 +1,77 @@
+extends ./layout.pug
+block main-content
+    .container.mt-5.px-sm-0
+        .row
+            .col 
+                h3.title-3.text-uppercase Sell now
+        .row
+            .col
+                form.row
+                    .col-sm-6.d-flex.flex-column.justify-content-between
+                        .form-group
+                            label(for="iptAmount") Amount of BTC
+                            input#iptAmount.form-control(type="text" aria-label="Amount of BTC")
+                        .form-group.form-check
+                            input#cbTransferTo.form-check-input(type="checkbox" aria-label="Check box for transfer BTC")
+                            label(for="cbTransferTo").form-check-label Transfer money to my account for me (differ account registered with COINSEX)
+                        .form-group    
+                            input#iptBankName.form-control(type="text" disabled placeholder="Bank name")
+                        .form-group    
+                            input#iptAccountNumber.form-control(type="text" disabled placeholder="Account number")
+                        .form-group    
+                            input#iptAccountName.form-control(type="text" disabled placeholder="Account name")
+                        .text-center
+                            button.btn.btn-dark.text-uppercase(type="Submit") Buy BTC
+                    .col-sm-6.d-flex.justify-content-between.flex-column
+                        .form-group
+                            label(for="iptAmountMoneyReceive") Amount of money RECEIVE
+                            input#iptAmountMoneyReceive.form-control(type="number" aria-label="Amount of money receive" disabled)
+                        .container.info
+                            .row.info_header
+                                .col
+                                    h6.title-6.text-uppercase.mb-0 Settlement infomation
+                            .row.info_content
+                                .col
+                                    .row
+                                        .col-6
+                                            .name Buy from
+                                        .col-6
+                                            .value.text-red Jully
+                                    .row
+                                        .col-6
+                                            .name Price
+                                        .col-6
+                                            .value 149,625,901
+                                    .row
+                                        .col-6        
+                                            .name Sale volume
+                                        .col-6
+                                            .value 0.1
+                                    .row
+                                        .col-6
+                                            .name Payment methods
+                                        .col-6
+                                            .value Bank transfer
+                                    .row
+                                        .col-6
+                                            .name Bank
+                                        .col-6
+                                            .value Vietcombank (VCB)
+block script-append
+    script.
+        $(function(){
+            $('#cbTransferTo').click(function(){
+                if($(this).is(':checked')){
+                    $('#iptBankName').attr('disabled',false);
+                    $('#iptAccountNumber').attr('disabled',false);
+                    $('#iptAccountName').attr('disabled',false);
+                }
+                else{
+                    $('#iptBankName').attr('disabled',true);
+                    $('#iptAccountNumber').attr('disabled',true);
+                    $('#iptAccountName').attr('disabled',true);
+                }
+            })
+        });
+    
+

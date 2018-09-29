@@ -1,0 +1,101 @@
+extends ./layout.pug
+
+block main-content
+    .container-fluid.my-5
+        .container
+            ul.nav.nav-tabs(role="tablist")
+                li.nav-item
+                    a.nav-link.active.text-uppercase(data-toggle="tab" href="#deposit") Deposit
+                li.nav-item
+                    a.nav-link.text-uppercase(data-toggle="tab" href="#withdraw") Withdraw
+                li.nav-item
+                    a.nav-link.text-uppercase(data-toggle="tab" href="#transactionHistory") Transaction history
+            .tab-content
+                #deposit.container.tab-pane.active.px-3.py-4
+                    .row
+                        .col
+                            h5.text-uppercase.text-center
+                                img.pr-1.mb-1(src="../assets/VND.png")
+                                |VND
+                            p.mb-0.text-center Please deposit into bellow amount to complete order.
+                            .row
+                                .col-md-8.mx-auto
+                                    form.frmDeposit
+                                        .form-group
+                                            label Bank
+                                            select.form-control.custom-select
+                                                                    option(value="vcb") Vietcombank
+                                                                    option(value="vpb") VPBank
+                                                                    option(value="msb") Maritime bank
+                                        .form-group
+                                            label Amount
+                                            input.form-control(type="text")
+                                        .text-center
+                                            button.btn.btn-confirm(type="submit") Deposit
+                                            button.btn.btn-dark(type="button") Cancel
+                #withdraw.container.tab-pane.fade.px-3.py-4
+                    .row
+                        .col
+                            h5.text-uppercase.text-center
+                                img.pr-1.mb-1(src="../assets/VND.png")
+                                |VND
+                            .row
+                                .col-md-8.mx-auto
+                                    form#frmWithdraw
+                                        .form-group
+                                            label Bank
+                                            select.form-control.custom-select
+                                                option(value="vcb") Vietcombank
+                                                option(value="vpb") VPBank
+                                                option(value="msb") Maritime bank
+                                        ul.list-group.list-group-flush.mb-4
+                                            li.list-group-item.d-flex
+                                                span Payment methods
+                                                span Bank transfer
+                                            li.list-group-item.d-flex
+                                                span Bank
+                                                span VPBank(VPB)
+                                            li.list-group-item.d-flex
+                                                span Account number
+                                                span 123456
+                                            li.list-group-item.d-flex
+                                                span Account name
+                                                span Chu Minh
+                                        .form-group
+                                            label Amount (Current Balance : 177,212,677).
+                                            input.form-control(type="number" placeholder="0")
+                                        .text-center
+                                            button.btn.btn-confirm(type="submit") Submit
+                                            button.btn.btn-dark(type="button") Cancel
+                #transactionHistory.container.tab-pane.fade.px-3.pt-4
+                    .row
+                        table#tblTransactionHistory
+                            thead
+                                tr
+                                    th.text-uppercase.text-left Currency
+                                    th.text-uppercase.text-right Amount 
+                                    th.text-uppercase.text-right Type
+                                    th.text-uppercase.text-right Transaction Time
+                            tbody
+                                -for(var i=1; i<=54; i++){
+                                    tr
+                                        td.text-uppercase BTC
+                                        td.text-right 0,50000000
+                                        -if(i%3==0){
+                                            td.text-right BUY
+                                        -}else{
+                                            td.text-right SELL
+                                        -}
+                                        td.text-right 2018-09-06 11:10:34
+                                -}
+block script-append
+    script.
+        $(document).ready( function () {
+            $('#tblTransactionHistory').DataTable({
+                searching: false,
+                ordering:  false,
+                info: false,
+                paging: true,
+                bLengthChange: false
+            });
+        } );

@@ -41,6 +41,98 @@
         </div>
       </div>
       <main class="main-content">   
+        <div class="container mt-5 px-sm-0">
+          <div class="row">
+            <div class="col"> 
+              <h3 class="title-3 text-uppercase">Sell now</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <form class="row">
+                <div class="col-sm-6 d-flex flex-column justify-content-between">
+                  <div class="form-group">
+                    <label for="iptAmount">Amount of BTC</label>
+                    <input class="form-control" id="iptAmount" type="text" aria-label="Amount of BTC"/>
+                  </div>
+                  <div class="form-group form-check">
+                    <input class="form-check-input" id="cbTransferTo" type="checkbox" aria-label="Check box for transfer BTC"/>
+                    <label class="form-check-label" for="cbTransferTo">Transfer money to my account for me (differ account registered with COINSEX)</label>
+                  </div>
+                  <div class="form-group">   
+                    <input class="form-control" id="iptBankName" type="text" disabled="disabled" placeholder="Bank name"/>
+                  </div>
+                  <div class="form-group">   
+                    <input class="form-control" id="iptAccountNumber" type="text" disabled="disabled" placeholder="Account number"/>
+                  </div>
+                  <div class="form-group">   
+                    <input class="form-control" id="iptAccountName" type="text" disabled="disabled" placeholder="Account name"/>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-dark text-uppercase" type="Submit">Buy BTC</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-between flex-column">
+                  <div class="form-group">
+                    <label for="iptAmountMoneyReceive">Amount of money RECEIVE</label>
+                    <input class="form-control" id="iptAmountMoneyReceive" type="number" aria-label="Amount of money receive" disabled="disabled"/>
+                  </div>
+                  <div class="container info">
+                    <div class="row info_header">
+                      <div class="col">
+                        <h6 class="title-6 text-uppercase mb-0">Settlement infomation</h6>
+                      </div>
+                    </div>
+                    <div class="row info_content">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="name">Buy from</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="value text-red">Jully</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="name">Price</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="value">149,625,901</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">       
+                            <div class="name">Sale volume</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="value">0.1</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="name">Payment methods</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="value">Bank transfer</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="name">Bank</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="value">Vietcombank (VCB)</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </main>
       <div class="container-fluid bg-footer py-4">
         <div class="container footer py-4">
@@ -86,5 +178,21 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/addons/datatables.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      $(function(){
+          $('#cbTransferTo').click(function(){
+              if($(this).is(':checked')){
+                  $('#iptBankName').attr('disabled',false);
+                  $('#iptAccountNumber').attr('disabled',false);
+                  $('#iptAccountName').attr('disabled',false);
+              }
+              else{
+                  $('#iptBankName').attr('disabled',true);
+                  $('#iptAccountNumber').attr('disabled',true);
+                  $('#iptAccountName').attr('disabled',true);
+              }
+          })
+      });
+    </script>
   </body>
 </html>
