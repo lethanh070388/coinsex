@@ -13,8 +13,12 @@
 .btn-sell,
 .btn-buy,
 .btn-dark,
+<<<<<<< HEAD
 .btn-confirm,
 .cancel{
+=======
+.btn-confirm{
+>>>>>>> origin/master
     @extend %btn-normal;
 }
 .btn-buy{
@@ -41,6 +45,7 @@
         background-color: lighten($darkblue,3%);
     }
 }
+<<<<<<< HEAD
 .btn-cancel{
     padding: .375em 1em;
     background-color: $white;
@@ -51,15 +56,24 @@
         border-color: $btn-red($darkblue,5%);
     }
 }
+=======
+>>>>>>> origin/master
 .btn-copy{
     padding: .375em 1em;
 }
 .btn-confirm{
     padding: .375em 1em;
+<<<<<<< HEAD
     background-color: $btn-yellow;
     color: $white;
     &:hover{
         background-color: lighten($btn-yellow,3%);
+=======
+    background-color: $yellow;
+    color: $black;
+    &:hover{
+        background-color: lighten($yellow,3%);
+>>>>>>> origin/master
     }
 }
 .btn-danger{
@@ -69,11 +83,15 @@
     padding: .375em 1em;
     background-color: $form-button;
     font-weight: 500;
+<<<<<<< HEAD
     color: $white;
+=======
+>>>>>>> origin/master
     &:hover{
         background-color: lighten($form-button,6%);
     }
 }
+<<<<<<< HEAD
 .btn-del{
     cursor: pointer;
     color: $red;
@@ -84,6 +102,8 @@
         color: darken($red,15%);
     }
 }
+=======
+>>>>>>> origin/master
 .form-control{
     border-radius: 0;
 }
@@ -103,7 +123,10 @@
         margin-right: 2px;
         top: 1px;
         border-bottom-color: $purple;
+<<<<<<< HEAD
         font-weight: 500;
+=======
+>>>>>>> origin/master
         &.active{
             border-color: $purple $purple #fff;
             color: $black;
@@ -221,7 +244,11 @@
 .form{
     &_header{
         background-color: $form-header;
+<<<<<<< HEAD
         color: $white;
+=======
+        color: $black;
+>>>>>>> origin/master
         h5{
             padding-top: .6em;
             padding-bottom: .6em;
@@ -238,6 +265,7 @@
         color: $white;
     }
 }
+<<<<<<< HEAD
 // END FORM BUY SELL NOW
 
 // LIST GROUP
@@ -488,3 +516,6 @@ input:checked+.slider:before {
     transform: translateX(14px);
 }
 // END SLIDER
+=======
+// END FORM BUY SELL NOW
+>>>>>>> origin/master
