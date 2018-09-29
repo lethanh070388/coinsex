@@ -13,8 +13,17 @@
 .btn-sell,
 .btn-buy,
 .btn-dark,
+<<<<<<< HEAD
 .btn-confirm,
 .cancel{
+=======
+<<<<<<< HEAD
+.btn-confirm,
+.cancel{
+=======
+.btn-confirm{
+>>>>>>> origin/master
+>>>>>>> origin/master
     @extend %btn-normal;
 }
 .btn-buy{
@@ -41,6 +50,10 @@
         background-color: lighten($darkblue,3%);
     }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 .btn-cancel{
     padding: .375em 1em;
     background-color: $white;
@@ -51,15 +64,33 @@
         border-color: $btn-red($darkblue,5%);
     }
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 .btn-copy{
     padding: .375em 1em;
 }
 .btn-confirm{
     padding: .375em 1em;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
     background-color: $btn-yellow;
     color: $white;
     &:hover{
         background-color: lighten($btn-yellow,3%);
+<<<<<<< HEAD
+=======
+=======
+    background-color: $yellow;
+    color: $black;
+    &:hover{
+        background-color: lighten($yellow,3%);
+>>>>>>> origin/master
+>>>>>>> origin/master
     }
 }
 .btn-danger{
@@ -69,11 +100,22 @@
     padding: .375em 1em;
     background-color: $form-button;
     font-weight: 500;
+<<<<<<< HEAD
     color: $white;
+=======
+<<<<<<< HEAD
+    color: $white;
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
     &:hover{
         background-color: lighten($form-button,6%);
     }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 .btn-del{
     cursor: pointer;
     color: $red;
@@ -84,6 +126,11 @@
         color: darken($red,15%);
     }
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 .form-control{
     border-radius: 0;
 }
@@ -103,7 +150,14 @@
         margin-right: 2px;
         top: 1px;
         border-bottom-color: $purple;
+<<<<<<< HEAD
         font-weight: 500;
+=======
+<<<<<<< HEAD
+        font-weight: 500;
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
         &.active{
             border-color: $purple $purple #fff;
             color: $black;
@@ -221,7 +275,15 @@
 .form{
     &_header{
         background-color: $form-header;
+<<<<<<< HEAD
         color: $white;
+=======
+<<<<<<< HEAD
+        color: $white;
+=======
+        color: $black;
+>>>>>>> origin/master
+>>>>>>> origin/master
         h5{
             padding-top: .6em;
             padding-bottom: .6em;
@@ -238,6 +300,10 @@
         color: $white;
     }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 // END FORM BUY SELL NOW
 
 // LIST GROUP
@@ -487,4 +553,11 @@ input:checked+.slider:before {
     -ms-transform: translateX(14px);
     transform: translateX(14px);
 }
+<<<<<<< HEAD
 // END SLIDER
+=======
+// END SLIDER
+=======
+// END FORM BUY SELL NOW
+>>>>>>> origin/master
+>>>>>>> origin/master
