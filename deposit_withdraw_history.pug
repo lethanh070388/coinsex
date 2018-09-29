@@ -1,0 +1,82 @@
+extends ./layout.pug
+
+block main-content
+    .container-fluid.my-5
+        .container
+            ul.nav.nav-tabs(role="tablist")
+                li.nav-item
+                    a.nav-link.active.text-uppercase(data-toggle="tab" href="#deposit") Deposit
+                li.nav-item
+                    a.nav-link.text-uppercase(data-toggle="tab" href="#withdraw") Withdraw
+                li.nav-item
+                    a.nav-link.text-uppercase(data-toggle="tab" href="#transactionHistory") Transaction history
+            .tab-content
+                #deposit.container.tab-pane.active.px-3.py-4
+                    .row
+                        .col.text-center
+                            h5.text-uppercase 
+                                img.pr-1.mb-1(src="../assets/BTC.png")
+                                | BTC
+                            p.mb-0 Please deposit into bellow amount to complete order.
+                            .img-small.text-center.mx-auto
+                                img.w-100(src="../assets/download.png")
+                            label Deposit Address
+                            .input-group.mb-3.row
+                                .input-group-prepend.col-md-6.mx-auto
+                                    button.btn.btn-copy#depositAddress(type="button")
+                                        i.far.fa-copy
+                                    input.form-control(type="text" placeholder="Deposit Address" aria-label="Deposit Address" aria-describedby="depositAddress")
+                            .text-center
+                                button.btn.btn-dark(type="button") Back
+                                button.btn.btn-confirm(type="button") Done
+                #withdraw.container.tab-pane.fade.px-3.py-4
+                    .row
+                        .col
+                            h5.text-uppercase.text-center
+                                img.pr-1.mb-1(src="../assets/BTC.png")
+                                | BTC
+                            .row
+                                .col-md-8.mx-auto
+                                    form#frmWithdraw
+                                        .form-group
+                                            label To Address
+                                            input.form-control(type="text")
+                                        .form-group
+                                            label Amount (Current Balance : 2.65437034).
+                                            input.form-control(type="number")
+                                            small.text-grey Transaction Fee : 0.002 (Withdrawal only possible when all funds have 6+ confirmations from blockchain.)
+                                        .text-center
+                                            button.btn.btn-confirm(type="button") Submit
+                                            button.btn.btn-dark(type="button") Cancel
+                #transactionHistory.container.tab-pane.fade.px-3.pt-4
+                    .row
+                        table#tblTransactionHistory
+                            thead
+                                tr
+                                    th.text-uppercase.text-left Currency
+                                    th.text-uppercase.text-right Amount 
+                                    th.text-uppercase.text-right Type
+                                    th.text-uppercase.text-right Transaction Time
+                            tbody
+                                -for(var i=1; i<=54; i++){
+                                    tr
+                                        td.text-uppercase BTC
+                                        td.text-right 0,50000000
+                                        -if(i%3==0){
+                                            td.text-right BUY
+                                        -}else{
+                                            td.text-right SELL
+                                        -}
+                                        td.text-right 2018-09-06 11:10:34
+                                -}
+block script-append
+    script.
+        $(document).ready( function () {
+            $('#tblTransactionHistory').DataTable({
+                searching: false,
+                ordering:  false,
+                info: false,
+                paging: true,
+                bLengthChange: false
+            });
+        } );

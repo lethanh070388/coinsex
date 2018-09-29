@@ -60,6 +60,61 @@
                 <div class="fas fa-cog icon"></div><span>Settings</span></a></div>
           </aside>
           <main class="content-wrapper">
+            <div class="container mt-5">
+              <div class="row">
+                <div class="col-md-6 mx-auto">
+                  <form id="frmIdentityCard" action="#">
+                    <div class="form-group">
+                      <label>Session KYC</label>
+                      <input class="form-control" type="text" placeholder="5748BBEF4E" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Full Name</label>
+                      <input class="form-control" type="text"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Identity card/Passport</label>
+                      <input class="form-control" type="text"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Status Pending</label>
+                      <input class="form-control-file" id="inputFile" type="file"/>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="img-holder border"><img class="w-100 d-block" src="../assets/Identity-demo.png" alt=""/></div>
+                      </div>
+                    </div>
+                    <div class="text-right my-4">
+                      <button class="btn btn-confirm" type="button">Save changes</button>
+                      <button class="btn btn-dark" type="button">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="modal modal-error fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                          <div>This file do not support. Please select another file type on jpg|jpeg|pdf|png.</div>
+                        </div>
+                        <div class="modal-footer text-right">
+                          <button class="btn btn-cancel" type="button" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
         </div>
       </main>
@@ -69,5 +124,12 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/addons/datatables.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      $(function(){
+          $('#inputFile').click(function(){
+              $('#errorModal').modal('show');
+          });
+      });
+    </script>
   </body>
 </html>

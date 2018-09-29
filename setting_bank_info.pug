@@ -1,0 +1,139 @@
+extends ./dashboard.pug
+block content
+    .container.mt-5
+        .row.account-table
+            .col
+                table#tblAccount.table.table-stripped
+                    thead
+                        tr
+                            th #
+                            th Beneficiary
+                            th Account number
+                            th Bank name
+                            th Action
+                    tbody
+                        tr
+                            td 1
+                            td.text-uppercase Chu Minh
+                            td 123456
+                            td VPBank(VPB)
+                            td
+                                a(href="#").btn-del
+                                    i.far.fa-trash-alt
+                        tr
+                            td 2
+                            td.text-uppercase Tran Hoang Duy Son
+                            td 04001010891976
+                            td Maritime Bank(MSB)
+                            td
+                                a(href="#").btn-del
+                                    i.far.fa-trash-alt
+                        tr
+                            td 3
+                            td.text-uppercase Tran Duy Minh
+                            td 071023678
+                            td Vietcombank(VCB)
+                            td
+                                a(href="#").btn-del
+                                    i.far.fa-trash-alt
+                .text-right
+                    button#btnAddAccount.btn.btn-confirm(type="button") Add account
+        .row.account-new.d-none
+            .col
+                form#frmNewAccunt.row(action="#")
+                    .col-md-6.mx-auto
+                        .form-group
+                            label Bank name
+                            select.form-control.custom-select
+                                option(value="vcb") Vietcombank
+                                option(value="vpb") VPBank
+                                option(value="msb") Maritime bank
+                        .form-group
+                            label Account name
+                            input.form-control(type="text")
+                    .col-md-6.mx-auto
+                        .form-group
+                            label Account number
+                            input.form-control(type="text")
+                        .form-group
+                            label Brand
+                            input.form-control(type="text")
+                    .col-sm-12
+                        .text-right
+                            button#btnNewAccount.btn.btn-confirm(type="submit" data-toggle="modal" data-target="#successModal") Add new
+                            button.btn.btn-dark(type="button") Cancel
+    //- Modal
+    .container
+        .row
+            .col
+                //- Success modal
+                #successModal.modal.modal-success.fade(tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true")
+                    .modal-dialog(role="document")
+                        .modal-content
+                            .modal-header
+                                h5#successModalLabel.modal-title Confirmation
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                            .modal-body
+                                div Bank account added successfully
+                            .modal-footer.text-right
+                                button.btn.btn-confirm(type="button" data-dismiss="modal") OK
+
+                //- Error modal
+                #errorModal.modal.modal-error.fade(tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true")
+                    .modal-dialog(role="document")
+                        .modal-content
+                            .modal-header
+                                h5#errorModalLabel.modal-title Error
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                            .modal-body
+                                div Bank account added successfully
+                            .modal-footer.text-right
+                                button.btn.btn-cancel(type="button" data-dismiss="modal") Cancel
+                    
+block script-append
+    script.
+        $(function(){
+            $('#btnAddAccount').click(function(){
+                $('.account-table').hide('fast',function(){
+                    $('.account-new').removeClass('d-none');
+                })
+            });
+
+            $('#btnNewAccount').click(function(e){
+                e.preventDefault();
+                var selectVal = $('#frmNewAccunt select option:selected').text();
+                var inputs = $('#frmNewAccunt input'), accountName, accountNum, brand, tr, count;
+                var table = $('#tblAccount tbody');
+                count = Number($('#tblAccount tbody tr:last-child td:first-child').text())+1;
+                accountName = inputs[0].value;
+                accountNum = inputs[1].value;
+                brand = inputs[2].value;
+                console.log(selectVal+' '+accountName+' '+accountNum+' '+brand);
+                tr = $("<tr />", {}).appendTo(table);
+                $("<td />", {
+                    "text": count
+                }).appendTo(tr);
+
+                $("<td />", {
+                    "class": 'text-uppercase',
+                    "text": accountName
+                }).appendTo(tr);
+
+                $("<td />", {
+                    "text": accountNum
+                }).appendTo(tr);
+
+                $("<td />", {
+                    "text": selectVal
+                }).appendTo(tr);
+
+                 $("<td />", {
+                    "html": '<a href="#" class="btn-del"><i class="far fa-trash-alt"></i></a>'
+                }).appendTo(tr);
+
+                $('.account-new').addClass('d-none');
+                $('.account-table').show('fast');
+            });
+        });

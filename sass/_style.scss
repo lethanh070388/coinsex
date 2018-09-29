@@ -16,6 +16,29 @@ html,body,.wrapper{
         padding-right: 0 !important;
     }
 }
+@media (max-width: 767px){
+    .px-sm-0{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+.px-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.img-small{
+    max-width: 225px;
+}
+.border {
+    border: 1px solid #ced4da !important;
+}
+.info-wrapper{
+    border-radius: 4px;
+    background: linear-gradient(-135deg, #95B0B5 50%, #4F7C84);
+}
+.max-300{
+    max-width: 300px;
+}
 // NAVBAR
 .navbar{
     padding: 0;
@@ -354,3 +377,4 @@ span.currency{
 }
 
 // END LIST ITEMS
+

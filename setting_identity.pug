@@ -1,0 +1,48 @@
+extends ./dashboard.pug
+block content
+    .container.mt-5
+        .row
+            .col-md-6.mx-auto
+                form#frmIdentityCard(action="#")
+                    .form-group
+                        label Session KYC
+                        input.form-control(type="text" placeholder="5748BBEF4E" disabled)
+                    .form-group
+                        label Full Name
+                        input.form-control(type="text")
+                    .form-group
+                        label Identity card/Passport
+                        input.form-control(type="text")
+                    .form-group
+                        label Status Pending
+                        input#inputFile.form-control-file(type="file")
+                    .row
+                        .col
+                            .img-holder.border
+                                img.w-100.d-block(src="../assets/Identity-demo.png", alt="")
+                    .text-right.my-4
+                        button.btn.btn-confirm(type="button") Save changes
+                        button.btn.btn-dark(type="button") Cancel
+    //- Modal
+    .container
+        .row
+            .col
+                //- Error modal
+                #errorModal.modal.modal-error.fade(tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true")
+                    .modal-dialog(role="document")
+                        .modal-content
+                            .modal-header
+                                h5#errorModalLabel.modal-title Error
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                            .modal-body
+                                div This file do not support. Please select another file type on jpg|jpeg|pdf|png.
+                            .modal-footer.text-right
+                                button.btn.btn-cancel(type="button" data-dismiss="modal") Close
+block script-append
+    script.
+        $(function(){
+            $('#inputFile').click(function(){
+                $('#errorModal').modal('show');
+            });
+        });

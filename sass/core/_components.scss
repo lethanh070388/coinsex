@@ -1,17 +1,20 @@
 // BUTTON
 .btn{
-    border-radius: 0;
+    border-radius: 2px;
     padding: .5em 1em;
+    min-width: 100px;
 }
 %btn-normal{
     color: $white;
     text-transform: uppercase;
-    font-weight: 300;
-    transition: all .3s ease;
+    font-weight: 500;
+    @include transition();
 }
 .btn-sell,
 .btn-buy,
-.btn-dark{
+.btn-dark,
+.btn-confirm,
+.cancel{
     @extend %btn-normal;
 }
 .btn-buy{
@@ -33,12 +36,53 @@
 .btn-dark{
     padding: .375em 1em;
     background-color: $darkblue;
+    border-color: $darkblue;
     &:hover{
         background-color: lighten($darkblue,3%);
     }
 }
+.btn-cancel{
+    padding: .375em 1em;
+    background-color: $white;
+    border: 2px solid $btn-red;
+    color: $btn-red;
+    &:hover{
+        color: $btn-red($darkblue,5%);
+        border-color: $btn-red($darkblue,5%);
+    }
+}
+.btn-copy{
+    padding: .375em 1em;
+}
+.btn-confirm{
+    padding: .375em 1em;
+    background-color: $btn-yellow;
+    color: $white;
+    &:hover{
+        background-color: lighten($btn-yellow,3%);
+    }
+}
 .btn-danger{
     color: $white !important;
+}
+.btn-order{
+    padding: .375em 1em;
+    background-color: $form-button;
+    font-weight: 500;
+    color: $white;
+    &:hover{
+        background-color: lighten($form-button,6%);
+    }
+}
+.btn-del{
+    cursor: pointer;
+    color: $red;
+    text-align: center;
+    display: block;
+    @include transition();
+    &:hover{
+        color: darken($red,15%);
+    }
 }
 .form-control{
     border-radius: 0;
@@ -49,7 +93,7 @@
 
 // TABS
 .nav-tabs{
-    border-bottom-color: $border;
+    border-bottom-color: $purple;
     .nav-link{
         border-top-left-radius: 0;
         border-top-right-radius: 0;
@@ -58,9 +102,14 @@
         position: relative;
         margin-right: 2px;
         top: 1px;
+        border-bottom-color: $purple;
+        font-weight: 500;
         &.active{
-            border-color: $border $border #fff;
+            border-color: $purple $purple #fff;
             color: $black;
+            &:hover{
+                border-color: $purple $purple #fff;
+            }
             &:before{
                 content: '';
                 position: absolute;
@@ -72,13 +121,29 @@
             }
         }
         &:hover{
-            border-color: lignten($border,3%);
+            border-color: $border;
+            border-bottom-color: $purple;
             background-color: lignten($border,3%);
         }
     }
+    .nav-item{
+        margin-bottom: 0;
+    }
+}
+.tab-content{
+    position: relative;
+    &:after{
+        content: '';
+        width: 100%;
+        height: 2px;
+        bottom: -1px;
+        left: 0;
+        background-color: $purple;
+        position: absolute;
+    }
 }
 .tab-pane{
-    border-color: $border;
+    border-color: $purple;
     border-style: solid;
     border-width: 0 1px 1px;
 }
@@ -107,3 +172,319 @@
     cursor: pointer;
 }
 // END ICONS
+
+// INFO
+.info{
+    padding-left: -15px;
+    padding-right: -15px;
+    &_header{
+        color: $white;
+        background-color: $info-header;
+        h6{
+            font-weight: 500;
+        }
+    }
+    &_content{
+        background-color: $info-content;
+    }
+    h6,.name,.value{
+        padding-top: .6em;
+        padding-bottom: .6em;
+    }
+    .name{
+        padding-left: 1em;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin-top: -0.3em;
+            left: 0;
+            border-width: .3em 0 .3em .3em;
+            border-style: solid;
+            border-color: transparent $info-arrow;
+        }
+    }
+}
+@media (max-width: 767px){
+    .info{
+        &_content{
+            .col-6{
+                padding-right: 0;
+            }
+        }
+    }
+}
+// END INFO
+
+// FORM BUY SELL NOW
+.form{
+    &_header{
+        background-color: $form-header;
+        color: $white;
+        h5{
+            padding-top: .6em;
+            padding-bottom: .6em;
+            font-weight: 500;
+        }
+    }
+    &_content{
+        background-color: $form-content;
+    }
+}
+#frmSellNow{
+    .form_header{
+        background-color: $darkblue;
+        color: $white;
+    }
+}
+// END FORM BUY SELL NOW
+
+// LIST GROUP
+.list-group-item{
+    padding: .5em 1.25em;
+    span{
+        flex: 1;
+    }
+    &:hover{
+        background-color: $border;
+    }
+}
+// END LIST GROUP
+
+// SIDE BAR
+.main-sidebar{
+    min-height: 100vh;
+    background-color: #252525;
+    box-shadow: 1px 0px 20px rgba(0,0,0,0.08);
+    max-width: 230px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $font-sidebar;
+    .toggle{
+        display: none;
+        position: absolute;
+        padding: .25em .5em;
+        background-color: #252525;
+        color: #fff;
+        left: 100%;
+        top: 95px;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+        z-index: 1080;
+    }
+}
+
+.user{
+    &_alias{
+        color: $user-alias;
+        border-bottom: 1px dotted #999;
+    }
+    &_avatar{
+        margin-top: 100px;
+        img{
+            width: 100%;
+            max-width: 35%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            border: 1px solid rgba(120, 130, 140, 0.13);
+            padding: 5px;
+        }
+    }
+    .icon{
+        color: $font-sidebar;
+        padding: .5em;
+        background-color: rgba(0,0,0,.2);
+        border-radius: 50%;
+        margin: 0 1em;
+    }
+    .link-arrow{
+        display: block;
+        @include transition();
+        color: $font-sidebar;
+        &:hover{
+            color: $user-alias;
+            text-decoration: none;
+        }
+    }
+}
+@media (max-width: 768px){
+    .main-sidebar{
+        max-width: 70px;
+    }
+    .link-arrow{
+        position: relative;
+        text-align: center;
+        span{
+            position: absolute;
+            left: 100%;
+            top: 0;
+            display: block;
+            height: 100%;
+            white-space: nowrap;
+            background-color: rgba(0,0,0,.6);
+            display: flex;
+            align-items: center;
+            min-width: 100px;
+            padding-left: .75em;
+            opacity: 0;
+            transform: translateX(-100%);
+            z-index: 1010;
+        }
+        &:hover{
+            span{
+                animation: slide .5s ease forwards;
+            }
+        }
+    }
+    .user{
+        &_avatar{
+            img{
+                max-width: 90%;
+            }
+        }
+        .icon{
+            padding: 0.75em;
+            font-size: 1.2em;
+            margin: 0;
+        }
+    }
+}
+.rounded-circle{
+    border-radius: 50%;
+}
+.content-wrapper{
+    margin-left: 230px;
+    
+}
+@media (max-width: 768px){
+    .content-wrapper{
+        margin-left: 70px;
+    } 
+}
+
+@keyframes slide{
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    60%{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 575px){
+    .main-sidebar{
+        transform: translateX(-100%);
+        z-index: 1000;
+        @include transition();
+        .toggle{
+            display: block;
+        }
+        &.open{
+            transform: translateX(0);
+        }
+    }
+    .content-wrapper{
+        margin-left: 0;
+    }
+}
+// END SIZE BAR
+
+// MODAL
+.modal-success{
+    .modal-header{
+        background-color: $green;
+        color: $white;
+        .modal-title{
+            font-weight: 500;
+        }
+    }
+}
+.modal-error{
+    .modal-header{
+        background-color: $btn-red;
+        color: $white;
+        .modal-title{
+            font-weight: 500;
+        }
+    }
+}
+.modal-content{
+    border: 0;
+}
+.modal-footer{
+    border-top: 0;
+}
+// END MODAL
+
+// SLIDER
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    margin-bottom: 0;
+}
+/* Hide default HTML checkbox */
+.switch input {
+    display: none; 
+}
+  
+  /* The slider */
+.switch-wrapper {
+    line-height: 10px; 
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: $green;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px $green;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+}
+// END SLIDER

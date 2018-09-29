@@ -1,0 +1,38 @@
+extends ./dashboard.pug
+block content
+    .container.mt-5
+        .row
+            .col
+                form#frmPersonalData.row(action="#")
+                    .col-md-6.mx-auto
+                        .form-group
+                            label Username
+                            input.form-control(type="text" placeholder="abc" disabled)
+                        .form-group
+                            label Alias
+                            input.form-control(type="text" placeholder="ann696")
+                        .form-group
+                            label Email
+                            input.form-control(type="email" placeholder="sontranhd@gmail.com" disabled)
+                    .col-md-6.mx-auto
+                        .form-group
+                            label Country
+                            select.form-control.custom-select
+                                option(value="america") America
+                                option(value="england") England
+                                option(value="vietnam" selected) Vietnam
+                                option(value="venezuela") Venezuela
+                        .form-group
+                            label Phone
+                            input.form-control(type="text" placeholder="01268183234")
+                        .form-group.mt-5.text-center
+                            .form-check.form-check-inline
+                                input.form-check-input#rdoMale(type="radio" name="gender" value="male")
+                                label.form-check-label(for="rdoMale") Male
+                            .form-check.form-check-inline
+                                input.form-check-input#rdoFemale(type="radio" name="gender" value="female")
+                                label.form-check-label(for="rdoFemale") Female
+                    .col-sm-12
+                        .text-right
+                            button.btn.btn-confirm(type="button") Save changes
+                            button.btn.btn-dark(type="button") Cancel

@@ -1,0 +1,32 @@
+extends ./layout_setting.pug
+block main-content
+    .container-fluid.px-0
+        aside.main-sidebar.user
+            .toggle
+                i.fas.fa-caret-right
+            .user_avatar
+                img.rounded-circle(src="../assets/user2-160x160.jpg", alt="")
+            .user_alias.mb-3
+                h5.title-5.text-center.py-2 User alias
+            .user_info.mb-3
+                a.link-arrow(href="./setting_personal.html")
+                    .fas.fa-user-circle.icon
+                    span Personal Data
+            .user_password.mb-3
+                a.link-arrow(href="./setting_password.html")
+                    .fas.fa-key.icon
+                    span Password
+            .user_bank.mb-3
+                a.link-arrow(href="./setting_bank_info.html")
+                    .fas.fa-credit-card.icon
+                    span Bank Info
+            .user_identity.mb-3
+                a.link-arrow(href="./setting_identity.html")
+                    .fas.fa-id-card.icon
+                    span Identity Verified
+            .user_setting.mb-3
+                a.link-arrow(href="./setting_general.html")
+                    .fas.fa-cog.icon
+                    span Settings
+        main.content-wrapper
+            block content
