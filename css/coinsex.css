@@ -111,17 +111,8 @@ b {
 .btn-sell,
 .btn-buy,
 .btn-dark,
-<<<<<<< HEAD
 .btn-confirm,
 .cancel {
-=======
-<<<<<<< HEAD
-.btn-confirm,
-.cancel {
-=======
-.btn-confirm {
->>>>>>> origin/master
->>>>>>> origin/master
   color: #fff;
   text-transform: uppercase;
   font-weight: 500;
@@ -151,10 +142,6 @@ b {
   .btn-dark:hover {
     background-color: #0342a2; }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
 .btn-cancel {
   padding: .375em 1em;
   background-color: #fff;
@@ -164,43 +151,21 @@ b {
     color: #ff3547 #033C93, 5%;
     border-color: #ff3547 #033C93, 5%; }
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 .btn-copy {
   padding: .375em 1em; }
 
 .btn-confirm {
   padding: .375em 1em;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
   background-color: #fbc02d;
   color: #fff; }
   .btn-confirm:hover {
     background-color: #fbc53c; }
-<<<<<<< HEAD
-=======
-=======
-  background-color: #F0D64E;
-  color: #000; }
-  .btn-confirm:hover {
-    background-color: #f1d95c; }
->>>>>>> origin/master
->>>>>>> origin/master
 
 .btn-danger {
   color: #fff !important; }
 
 .btn-order {
   padding: .375em 1em;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
   background-color: #ffa000;
   font-weight: 500;
   color: #fff; }
@@ -218,15 +183,6 @@ b {
   -o-transition: all 0.3s ease; }
   .btn-del:hover {
     color: #b31d00; }
-<<<<<<< HEAD
-=======
-=======
-  background-color: #F0D64E;
-  font-weight: 500; }
-  .btn-order:hover {
-    background-color: #f2dd6a; }
->>>>>>> origin/master
->>>>>>> origin/master
 
 .form-control {
   border-radius: 0; }
@@ -241,17 +197,8 @@ b {
     position: relative;
     margin-right: 2px;
     top: 1px;
-<<<<<<< HEAD
     border-bottom-color: purple;
     font-weight: 500; }
-=======
-<<<<<<< HEAD
-    border-bottom-color: purple;
-    font-weight: 500; }
-=======
-    border-bottom-color: purple; }
->>>>>>> origin/master
->>>>>>> origin/master
     .nav-tabs .nav-link.active {
       border-color: purple purple #fff;
       color: #000; }
@@ -335,18 +282,8 @@ b {
     padding-right: 0; } }
 
 .form_header {
-<<<<<<< HEAD
   background-color: #fbc02d;
   color: #fff; }
-=======
-<<<<<<< HEAD
-  background-color: #fbc02d;
-  color: #fff; }
-=======
-  background-color: #F0D64E;
-  color: #000; }
->>>>>>> origin/master
->>>>>>> origin/master
   .form_header h5 {
     padding-top: .6em;
     padding-bottom: .6em;
@@ -359,10 +296,6 @@ b {
   background-color: #033C93;
   color: #fff; }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
 .list-group-item {
   padding: .5em 1.25em; }
   .list-group-item span {
@@ -562,11 +495,6 @@ input:checked + .slider:before {
   -ms-transform: translateX(14px);
   transform: translateX(14px); }
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 .dataTables_wrapper {
   width: 100%;
   padding-left: 15px;
@@ -618,14 +546,10 @@ input:checked + .slider:before {
     padding-right: 0 !important; }
   .balance-info-wrapper .col-sm-12 {
     padding-left: 3px !important;
-<<<<<<< HEAD
     padding-right: 3px !important; }
   .dataTables_wrapper .dataTable td, .dataTables_wrapper .dataTable th {
     padding: 0.25em;
     transition: all .3s ease; } }
-=======
-    padding-right: 3px !important; } }
->>>>>>> origin/master
 
 .page-item.active .page-link {
   background-color: #033C93;
@@ -665,10 +589,6 @@ html, body, .wrapper {
 .img-small {
   max-width: 225px; }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
 .border {
   border: 1px solid #ced4da !important; }
 
@@ -679,11 +599,6 @@ html, body, .wrapper {
 .max-300 {
   max-width: 300px; }
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 .navbar {
   padding: 0;
   z-index: 1010; }
