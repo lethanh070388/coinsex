@@ -441,6 +441,23 @@ b {
 .modal-footer {
   border-top: 0; }
 
+.modal-register .modal-header {
+  background-color: #40A2C2;
+  color: #fff; }
+
+.modal-register .btn-confirm {
+  background-color: #4F7C84;
+  border: 2px solid #4F7C84; }
+  .modal-register .btn-confirm:hover {
+    border: 2px solid #4F7C84;
+    background-color: transparent;
+    color: #4F7C84; }
+
+@media (min-width: 576px) {
+  .modal-register .modal-dialog {
+    width: 80%;
+    max-width: 980px; } }
+
 .switch {
   position: relative;
   display: inline-block;

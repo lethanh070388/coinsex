@@ -41,12 +41,12 @@ html(lang="en")
                                 li.nav-item
                                     a.nav-link(href="orders.html") 
                                         span Orders
-                                li.nav-item
-                                    a.nav-link(href="#") 
-                                        span Login
-                                li.nav-item
-                                    a.nav-link(href="#") 
-                                        span Register
+                                li.nav-item.dropdown
+                                    a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                                        span ann696
+                                    .dropdown-menu(aria-labelledby="navbarDropdown")
+                                        a.dropdown-item(href="./setting_personal.html") My profile
+                                        a.dropdown-item(href="./index.html") Log out
                                 .dropdown.select-lang
                                     button.btn.dropdown-toggle(type="button" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Dropdown
                                     .dropdown-menu(aria-labelledby="dropdownLang")

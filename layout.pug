@@ -42,10 +42,10 @@ html(lang="en")
                                     a.nav-link(href="orders.html") 
                                         span Orders
                                 li.nav-item
-                                    a.nav-link(href="#") 
+                                    a.nav-link(href="#" data-toggle="modal" data-target="#modalLogin") 
                                         span Login
                                 li.nav-item
-                                    a.nav-link(href="#") 
+                                    a.nav-link(href="#" data-toggle="modal" data-target="#modalRegister") 
                                         span Register
                                 .dropdown.select-lang
                                     button.btn.dropdown-toggle(type="button" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Dropdown
@@ -58,6 +58,115 @@ html(lang="en")
             main.main-content    
                 block main-content
 
+                
+                .container
+                    .row
+                        .col
+                            //- Register modal
+                            #modalRegister.modal.modal-register.fade(tabindex="-1" role="dialog" aria-labelledby="modalRegisterTitle" aria-hidden="true")
+                                .modal-dialog.modal-dialog-centered(role="document")
+                                    .modal-content
+                                        .modal-header
+                                            h5#modalRegisterTitle.modal-title.text-uppercase.font-bold.w-100.text-center Register Coinsex System
+                                            button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                                span(aria-hidden="true") &times;
+                                        .modal-body
+                                            form#frmRegister.row(action="#" novalidate).needs-validation
+                                                .col-md-6.mx-auto
+                                                    .form-group
+                                                        label.font-bold Username
+                                                        input.form-control(type="text" placeholder="Type your username" required)
+                                                        .invalid-feedback Please input your name
+                                                    .form-group
+                                                        label.font-bold Alias
+                                                        input.form-control(type="text" placeholder="Type your alias" required)
+                                                        .invalid-feedback Please input your alias
+                                                    .form-group
+                                                        label.font-bold Email
+                                                        input.form-control(type="email" placeholder="Type your email" required)
+                                                        .invalid-feedback Please input email
+                                                .col-md-6.mx-auto
+                                                    .form-group
+                                                        label.font-bold Password
+                                                        input.form-control(type="password" placeholder="Type your password" required)
+                                                        .invalid-feedback Please input password
+                                                    .form-group
+                                                        label.font-bold Confirm password
+                                                        input.form-control(type="password" placeholder="Retype your password" required)
+                                                        .invalid-feedback Please confirm password
+                                                    .form-group
+                                                        label.font-bold Reference code
+                                                        input.form-control(type="text" placeholder="Reference code" required)
+                                                        .invalid-feedback Please input reference code
+                                                .col-md-12
+                                                    .form-group.form-check
+                                                        input.form-check-input#checkPolicy(type="checkbox" required)
+                                                        label.form-check-label(for="checkPolicy") I agreed to all policies, terms and conditions
+                                                        .invalid-feedback You must agree before submitting.
+                                                    .text-center
+                                                        button.btn.btn-confirm(type="submit") Register
+                                            .modal-footer
+                                                .mx-auto Already have an account? 
+                                                    a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalLogin") Login
+                    .row
+                        .col
+                            //- Login modal
+                            #modalLogin.modal.modal-register.fade(tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle" aria-hidden="true")
+                                .modal-dialog.modal-dialog-centered(role="document")
+                                    .modal-content
+                                        .modal-header
+                                            h5#modalLoginTitle.modal-title.text-uppercase.font-bold.w-100.text-center Login Coinsex System
+                                            button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                                span(aria-hidden="true") &times;
+                                        .modal-body
+                                            form#frmRegister.row(action="#" novalidate).needs-validation
+                                                .col-md-10.mx-auto
+                                                    .form-group
+                                                        label.font-bold Email
+                                                        input.form-control(type="email" placeholder="Type your email" required)
+                                                        .invalid-feedback Please input email
+                                                    .form-group
+                                                        label.font-bold Password
+                                                        input.form-control(type="password" placeholder="Type your password" required)
+                                                        .invalid-feedback Please input password
+                                                    .form-group
+                                                        label.font-bold 2FACode
+                                                        input.form-control(type="text" placeholder="Enter 2FA Code (Only if you enable 2FA)" required)
+                                                        .invalid-feedback Please input 2FA Code
+                                                    .form-group.text-right
+                                                        a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalForgotPass") Forgot password
+                                                    .text-center
+                                                        //- button.btn.btn-confirm(type="submit") Login
+                                                        a.btn.btn-confirm(type="button" href="./setting_personal.html") Login
+                                            .modal-footer
+                                                .mx-auto Do not have account? 
+                                                    a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalRegister") Register    
+                    .row
+                        .col
+                            //- Forgot pass modal
+                            #modalForgotPass.modal.modal-register.fade(tabindex="-1" role="dialog" aria-labelledby="modalForgotPassTitle" aria-hidden="true")
+                                .modal-dialog.modal-dialog-centered(role="document")
+                                    .modal-content
+                                        .modal-header
+                                            h5#modalForgotPassTitle.modal-title.text-uppercase.font-bold.w-100.text-center Lost password
+                                            button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                                span(aria-hidden="true") &times;
+                                        .modal-body
+                                            form#frmRegister.row(action="#" novalidate).needs-validation
+                                                .col-md-10.mx-auto
+                                                    p Follow these simple steps to reset your account:
+                                                    p 1. Enter your registered an email at COINSEX.ORG
+                                                    p 2. Wait for your recovery details to be sent to your registered email
+                                                    p 3. Follow instruction and be re-united with your COINSEX.ORG account
+                                                    .form-group
+                                                        label.font-bold Email
+                                                        input.form-control(type="email" placeholder="Type your email" required)
+                                                        .invalid-feedback Please input email
+                                                    .text-center
+                                                        button.btn.btn-confirm(type="submit") Confirm
+                                            .modal-footer
+                                                .mx-auto Recalled password? 
+                                                    a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalLogin") Login    
             .container-fluid.bg-footer.py-4
                 .container.footer.py-4
                     .row.justify-content-between
@@ -106,4 +215,20 @@ html(lang="en")
         script(src="../js/bootstrap.min.js")
         script(src="../js/addons/datatables.min.js")
         script(src="../js/main.js")
+        script.
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                    });
+                }, false);
+            })();
         block script-append

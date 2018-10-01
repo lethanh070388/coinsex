@@ -25,8 +25,8 @@
                 <li class="nav-item"><a class="nav-link" href="#"> <span>DASH</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="balance.html"> <span>Wallet</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="orders.html"> <span>Orders</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> <span>Login</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"> <span>Register</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#modalLogin"> <span>Login</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#modalRegister"> <span>Register</span></a></li>
                 <div class="dropdown select-lang">
                   <button class="btn dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
                   <div class="dropdown-menu" aria-labelledby="dropdownLang">
@@ -457,6 +457,148 @@
             </div>
           </div>
         </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="modal modal-register fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="modalRegisterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-uppercase font-bold w-100 text-center" id="modalRegisterTitle">Register Coinsex System</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="row needs-validation" id="frmRegister" action="#" novalidate="novalidate">
+                        <div class="col-md-6 mx-auto">
+                          <div class="form-group">
+                            <label class="font-bold">Username</label>
+                            <input class="form-control" type="text" placeholder="Type your username" required="required"/>
+                            <div class="invalid-feedback">Please input your name</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="font-bold">Alias</label>
+                            <input class="form-control" type="text" placeholder="Type your alias" required="required"/>
+                            <div class="invalid-feedback">Please input your alias</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="font-bold">Email</label>
+                            <input class="form-control" type="email" placeholder="Type your email" required="required"/>
+                            <div class="invalid-feedback">Please input email</div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mx-auto">
+                          <div class="form-group">
+                            <label class="font-bold">Password</label>
+                            <input class="form-control" type="password" placeholder="Type your password" required="required"/>
+                            <div class="invalid-feedback">Please input password</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="font-bold">Confirm password</label>
+                            <input class="form-control" type="password" placeholder="Retype your password" required="required"/>
+                            <div class="invalid-feedback">Please confirm password</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="font-bold">Reference code</label>
+                            <input class="form-control" type="text" placeholder="Reference code" required="required"/>
+                            <div class="invalid-feedback">Please input reference code</div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group form-check">
+                            <input class="form-check-input" id="checkPolicy" type="checkbox" required="required"/>
+                            <label class="form-check-label" for="checkPolicy">I agreed to all policies, terms and conditions</label>
+                            <div class="invalid-feedback">You must agree before submitting.</div>
+                          </div>
+                          <div class="text-center">
+                            <button class="btn btn-confirm" type="submit">Register</button>
+                          </div>
+                        </div>
+                      </form>
+                      <div class="modal-footer">
+                        <div class="mx-auto">Already have an account? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalLogin">Login</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="modal modal-register fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-uppercase font-bold w-100 text-center" id="modalLoginTitle">Login Coinsex System</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="row needs-validation" id="frmRegister" action="#" novalidate="novalidate">
+                        <div class="col-md-10 mx-auto">
+                          <div class="form-group">
+                            <label class="font-bold">Email</label>
+                            <input class="form-control" type="email" placeholder="Type your email" required="required"/>
+                            <div class="invalid-feedback">Please input email</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="font-bold">Password</label>
+                            <input class="form-control" type="password" placeholder="Type your password" required="required"/>
+                            <div class="invalid-feedback">Please input password</div>
+                          </div>
+                          <div class="form-group">
+                            <label class="font-bold">2FACode</label>
+                            <input class="form-control" type="text" placeholder="Enter 2FA Code (Only if you enable 2FA)" required="required"/>
+                            <div class="invalid-feedback">Please input 2FA Code</div>
+                          </div>
+                          <div class="form-group text-right"><a href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalForgotPass">Forgot password</a></div>
+                          <div class="text-center"><a class="btn btn-confirm" type="button" href="./setting_personal.html">Login</a></div>
+                        </div>
+                      </form>
+                      <div class="modal-footer">
+                        <div class="mx-auto">Do not have account? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalRegister">Register    </a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="modal modal-register fade" id="modalForgotPass" tabindex="-1" role="dialog" aria-labelledby="modalForgotPassTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-uppercase font-bold w-100 text-center" id="modalForgotPassTitle">Lost password</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="row needs-validation" id="frmRegister" action="#" novalidate="novalidate">
+                        <div class="col-md-10 mx-auto">
+                          <p>Follow these simple steps to reset your account:</p>
+                          <p>1. Enter your registered an email at COINSEX.ORG</p>
+                          <p>2. Wait for your recovery details to be sent to your registered email</p>
+                          <p>3. Follow instruction and be re-united with your COINSEX.ORG account</p>
+                          <div class="form-group">
+                            <label class="font-bold">Email</label>
+                            <input class="form-control" type="email" placeholder="Type your email" required="required"/>
+                            <div class="invalid-feedback">Please input email</div>
+                          </div>
+                          <div class="text-center">
+                            <button class="btn btn-confirm" type="submit">Confirm</button>
+                          </div>
+                        </div>
+                      </form>
+                      <div class="modal-footer">
+                        <div class="mx-auto">Recalled password? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalLogin">Login    </a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <div class="container-fluid bg-footer py-4">
         <div class="container footer py-4">
@@ -502,6 +644,23 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/addons/datatables.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+              var forms = document.getElementsByClassName('needs-validation');
+              var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                  if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                  }
+                  form.classList.add('was-validated');
+              }, false);
+              });
+          }, false);
+      })();
+    </script>
     <script>
       $(document).ready( function () {
           $('#tblTransactionHistory').DataTable({

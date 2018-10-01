@@ -422,6 +422,27 @@
 .modal-footer{
     border-top: 0;
 }
+.modal-register{
+    .modal-header{
+        background-color: $info-header;
+        color: $white;
+    }
+    .btn-confirm{
+        background-color: $info-arrow;
+        border: 2px solid $info-arrow;
+        &:hover{
+            border: 2px solid $info-arrow;
+            background-color: transparent;
+            color: $info-arrow;
+        }
+    }
+    @media (min-width: 576px){
+        .modal-dialog{
+            width: 80%;
+            max-width: 980px;
+        }
+    }
+}
 // END MODAL
 
 // SLIDER
