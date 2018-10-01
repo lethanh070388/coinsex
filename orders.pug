@@ -68,9 +68,21 @@ block main-content
                                     td.text-right 0.1
                                     td.text-right 0.3
                                     td.text-right 0
-                                    td.text-right &nbsp;
+                                    td.text-right 0
                                     td.text-right Open
-                                    td.text-right &nbsp;
+                                    td.text-right 0
+                                    td.text-right 
+                                        a.btn.btn-danger Cancel
+                                tr
+                                    td.text-uppercase SELL 
+                                    td.text-center 2018-08-30 17:17:12
+                                    td.text-right 135.967.319	
+                                    td.text-right 0.1
+                                    td.text-right 0.3
+                                    td.text-right 0
+                                    td.text-right 0
+                                    td.text-right Open
+                                    td.text-right 0
                                     td.text-right 
                                         a.btn.btn-danger Cancel
                 #transactionHistory.container.tab-pane.fade.px-3.pt-4
@@ -105,13 +117,44 @@ block main-content
 block script-append
     script.
         $(document).ready( function () {
-            $('.table-plugin').DataTable({
+            
+            var table = $('.table-plugin').DataTable({
                 searching: false,
                 ordering:  false,
                 info: false,
                 paging: true,
-                bLengthChange: false
+                bLengthChange: false,
+                autoWidth: true,
+                scrollX: false
             });
+
+            $(window).resize(function(){
+                if($(this).width()<992){
+                    table.destroy();
+
+                    table = $('.table-plugin').DataTable({
+                        searching: false,
+                        ordering:  false,
+                        info: false,
+                        paging: true,
+                        bLengthChange: false,
+                        autoWidth: true,
+                        scrollX: true
+                    });
+                }
+                else{
+                    table.destroy();
+                    table = $('.table-plugin').DataTable({
+                        searching: false,
+                        ordering:  false,
+                        info: false,
+                        paging: true,
+                        bLengthChange: false,
+                        autoWidth: true,
+                        scrollX: false
+                    });
+                }
+            })
         } );
     
             

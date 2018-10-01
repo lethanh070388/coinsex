@@ -509,3 +509,13 @@ input:checked+.slider:before {
     transform: translateX(14px);
 }
 // END SLIDER
+
+// COLLAPSE
+.card{
+    border-radius: 0;
+    margin-bottom: 0.25em;
+    &-body{
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+}
+// END COLLAPSE

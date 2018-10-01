@@ -1,0 +1,49 @@
+extends ./layout.pug
+
+block main-content
+    .container.my-5
+        .row
+            .col
+                #accordionFAQ.accordion
+                    .card
+                        #headingOne.card-header
+                            h5.mb-0
+                                button.btn.btn-link(type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne") About COINSEX.ORG
+                        #collapseOne.collapse(aria-labelledby="headingOne" data-parent="#accordionFAQ")        
+                            .card-body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, ab.
+                    .card
+                        #headingTwo.card-header
+                            h5.mb-0
+                                button.btn.btn-link.collapsed(type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo") How to register an account at COINSEX.ORG?
+                        #collapseTwo.collapse(aria-labelledby="headingTwo" data-parent="#accordionFAQ")        
+                            .card-body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, ab.
+                    .card
+                        #headingThree.card-header
+                            h5.mb-0
+                                button.btn.btn-link.collapsed(type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree") How to deposit/withdrawal VND to/from my account?
+                        #collapseThree.collapse(aria-labelledby="headingThree" data-parent="#accordionFAQ")        
+                            .card-body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, ab.
+                    .card
+                        #headingFour.card-header
+                            h5.mb-0
+                                button.btn.btn-link.collapsed(type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour") How to deposit/transfer BTC to/from my account?
+                        #collapseFour.collapse(aria-labelledby="headingFour" data-parent="#accordionFAQ")        
+                            .card-body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, ab.
+                    .card
+                        #headingFive.card-header
+                            h5.mb-0
+                                button.btn.btn-link.collapsed(type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive") How to place order BUY/SELL?
+                        #collapseFive.collapse(aria-labelledby="headingFive" data-parent="#accordionFAQ")        
+                            .card-body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, ab.
+                    .card
+                        #headingTwo.card-header
+                            h5.mb-0
+                                button.btn.btn-link.collapsed(type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix") What is Bitcoin (BTC)?
+                        #collapseSix.collapse(aria-labelledby="headingSix" data-parent="#accordionFAQ")        
+                            .card-body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, ab.
+                    .card
+                        #headingTwo.card-header
+                            h5.mb-0
+                                button.btn.btn-link.collapsed(type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven") What is Ethereum (ETH)?
+                        #collapseSeven.collapse(aria-labelledby="headingSeven" data-parent="#accordionFAQ")        
+                            .card-body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, ab.

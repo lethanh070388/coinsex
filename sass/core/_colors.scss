@@ -50,7 +50,7 @@ $material-colors: map-merge((
   "bg-primary":        $purple,
   "bg-secondary":      $yellow,
   "bg-footer": $yellow-bg-footer,
-  "bg-light": $gray
+  "bg-light": $white
 ), $material-colors);
 
 @each $color_name, $color in $material-colors {

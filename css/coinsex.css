@@ -16,7 +16,7 @@
   background-color: #F9B81F !important; }
 
 .bg-light {
-  background-color: #f1f1f1 !important; }
+  background-color: #fff !important; }
 
 .text-blue {
   color: #033C93 !important; }
@@ -512,6 +512,12 @@ input:checked + .slider:before {
   -ms-transform: translateX(14px);
   transform: translateX(14px); }
 
+.card {
+  border-radius: 0;
+  margin-bottom: 0.25em; }
+  .card-body {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+
 .dataTables_wrapper {
   width: 100%;
   padding-left: 15px;
@@ -520,14 +526,13 @@ input:checked + .slider:before {
     width: 100% !important; }
   .dataTables_wrapper .dataTable {
     width: 100% !important;
-    border: 1px solid #ccc;
     border-collapse: collapse; }
     .dataTables_wrapper .dataTable .sorting_disabled {
       cursor: default; }
     .dataTables_wrapper .dataTable th {
       background-color: #ccc; }
     .dataTables_wrapper .dataTable td, .dataTables_wrapper .dataTable th {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #ededed;
       padding: 0.5em;
       transition: all .3s ease; }
       .dataTables_wrapper .dataTable td:not(:first-child), .dataTables_wrapper .dataTable th:not(:first-child) {
@@ -623,7 +628,7 @@ html, body, .wrapper {
 .navbar-brand {
   min-width: 205px;
   padding: 45px;
-  background-image: url("../assets/logo-en-US-.png");
+  background-image: url("../assets/logo_new_en.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center; }
