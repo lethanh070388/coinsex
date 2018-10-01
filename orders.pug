@@ -117,17 +117,28 @@ block main-content
 block script-append
     script.
         $(document).ready( function () {
-            
-            var table = $('.table-plugin').DataTable({
-                searching: false,
-                ordering:  false,
-                info: false,
-                paging: true,
-                bLengthChange: false,
-                autoWidth: true,
-                scrollX: false
-            });
-
+            if($(window).width()<992){
+                var table = $('.table-plugin').DataTable({
+                    searching: false,
+                    ordering:  false,
+                    info: false,
+                    paging: true,
+                    bLengthChange: false,
+                    autoWidth: true,
+                    scrollX: true
+                });
+            }
+            else{
+                var table = $('.table-plugin').DataTable({
+                    searching: false,
+                    ordering:  false,
+                    info: false,
+                    paging: true,
+                    bLengthChange: false,
+                    autoWidth: true,
+                    scrollX: false
+                });
+            }
             $(window).resize(function(){
                 if($(this).width()<992){
                     table.destroy();
