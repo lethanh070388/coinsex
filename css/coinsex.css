@@ -623,7 +623,8 @@ html, body, .wrapper {
 
 .navbar {
   padding: 0;
-  z-index: 1010; }
+  z-index: 1010;
+  border-bottom: 4px solid #ffa000; }
 
 .navbar-brand {
   min-width: 205px;
