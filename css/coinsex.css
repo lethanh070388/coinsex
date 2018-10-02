@@ -122,18 +122,28 @@ b {
   -o-transition: all 0.3s ease; }
 
 .btn-buy {
-  background-color: #1E9FF2; }
+  background-color: #fbc02d;
+  color: #fff !important; }
   .btn-buy:hover {
-    background-color: #2ca5f3;
+    background-color: #fbc846;
     box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+    -webkit-box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
 
 .btn-sell {
-  background-color: #1ABC90; }
+  background-color: #005249;
+  color: #fff !important; }
   .btn-sell:hover {
-    background-color: #1cc99a;
+    background-color: #006c60;
     box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+    -webkit-box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 0 9px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
 
 .btn-dark {
   padding: .375em 1em;
@@ -327,6 +337,8 @@ b {
   min-height: 100vh;
   background-color: #252525;
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
   max-width: 230px;
   position: fixed;
   top: 0;
@@ -647,6 +659,8 @@ html, body, .wrapper {
 .text-shadow {
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   font-weight: 600 !important; }
 
 a:visited,
@@ -690,7 +704,9 @@ a:focus {
       .navbar-light .navbar-nav .nav-link:hover span {
         color: #fff;
         transition: all .2s ease;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        -webkit-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        -moz-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
     .navbar-light .navbar-nav .nav-link:before {
       content: '';
       position: absolute;
@@ -702,7 +718,10 @@ a:focus {
       transform: scaleX(0);
       opacity: 0;
       transform-origin: left top;
-      transition: all .2s ease; }
+      transition: all 0.2s ease;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease; }
     @media screen and (min-width: 992px) {
       .navbar-light .navbar-nav .nav-link:before {
         transform-origin: center top; } }
@@ -906,9 +925,9 @@ span.currency {
   width: 60px;
   height: 60px;
   background-color: purple;
+  box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
   z-index: 10000;
   border-radius: 50%;
   cursor: pointer; }

@@ -18,19 +18,21 @@
     @extend %btn-normal;
 }
 .btn-buy{
-    background-color: $cyan;
+    background-color: $btn-yellow;
+    color: $white !important;
     &:hover{
-        background-color: lighten($cyan,3%);
-        box-shadow: 0 0 9px 2px rgba(255,255,255,.8);
-        text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+        background-color: lighten($btn-yellow,5%);
+        @include box-shadow(0 0 9px 2px rgba(255,255,255,.8));
+        @include text-shadow(1px 1px 1px rgba(0,0,0,.2));
     }
 }
 .btn-sell{
-    background-color: $green;
+    background-color: $darkgreen;
+    color: $white !important;
     &:hover{
-        background-color: lighten($green,3%);
-        box-shadow: 0 0 9px 2px rgba(255,255,255,.8);
-        text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+        background-color: lighten($darkgreen,5%);
+        @include box-shadow(0 0 9px 2px rgba(255,255,255,.8));
+        @include text-shadow(1px 1px 1px rgba(0,0,0,.2));
     }
 }
 .btn-dark{
@@ -298,7 +300,7 @@
 .main-sidebar{
     min-height: 100vh;
     background-color: #252525;
-    box-shadow: 1px 0px 20px rgba(0,0,0,0.08);
+    @include box-shadow(1px 0px 20px rgba(0,0,0,0.08));
     max-width: 230px;
     position: fixed;
     top: 0;
