@@ -119,7 +119,7 @@ html(lang="en")
                                             button.close(type="button" data-dismiss="modal" aria-label="Close")
                                                 span(aria-hidden="true") &times;
                                         .modal-body
-                                            form#frmRegister.row(action="#" novalidate).needs-validation
+                                            form#frmLogin.row(action="#" novalidate).needs-validation
                                                 .col-md-10.mx-auto
                                                     .form-group
                                                         label.font-bold Email
@@ -137,7 +137,8 @@ html(lang="en")
                                                         a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalForgotPass") Forgot password
                                                     .text-center
                                                         //- button.btn.btn-confirm(type="submit") Login
-                                                        a.btn.btn-confirm(type="button" href="./setting_personal.html") Login
+                                                        a(href="./setting_personal.html")
+                                                            button.btn.btn-confirm(type="button") Login
                                             .modal-footer
                                                 .mx-auto Do not have account? 
                                                     a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalRegister") Register    

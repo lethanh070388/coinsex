@@ -7,17 +7,17 @@ block main-content
                 .row
                     .col-md-6
                         .market_info.text-center
-                            h2.title-1.text-uppercase.text-blue.pb-2 Market Bitcoin Coinsex
+                            h2.text-shadow.text-uppercase.text-blue.pb-2 Market Bitcoin Coinsex
                             h5.title-3.pb-2 Where to buy Bitcoin SAFE and FAST
                             .row
                                 .col-6
-                                    h4.title-3.py-2.text-cyan Offer price
-                                    h3.title-3.pt-2.pb-4.text-cyan.font-bold 138.684.040
-                                    a.btn.btn-buy(href="./btcbuynow.html") Buy now
+                                    h4.py-2.text-shadow Offer price
+                                    h3.pt-2.pb-4.text-shadow 138.684.040
+                                    a.btn.btn-confirm(href="./btcbuynow.html") Buy now
                                 .col-6.text-center
-                                    h4.title-3.py-2.text-green Offer price
-                                    h3.title-3.pt-2.pb-4.text-green.font-bold 138.684.040
-                                    a.btn.btn-sell(href="./btcbuynow.html") Sell now
+                                    h4.py-2.text-shadow Offer price
+                                    h3.pt-2.pb-4.text-shadow 138.684.040
+                                    a.btn.btn-confirm(href="./btcbuynow.html") Sell now
                     .col-md-6.d-flex
                         .market_info.chart-wrapper
     .container-fluid.mt-4.pt-4
@@ -109,6 +109,8 @@ block main-content
                                     span.currency
                                     span.text-blue land    
                                 .item_label Instant trade
+    .box-chat.d-flex.justify-content-center.align-items-center
+        i.fas.fa-envelope-open.fa-2x.text-white
 
 block script-append
     script(src="../js/addons/particles.min.js")

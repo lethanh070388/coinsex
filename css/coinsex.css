@@ -184,6 +184,14 @@ b {
   .btn-del:hover {
     color: #b31d00; }
 
+.btn-link {
+  color: #36c6d3;
+  font-weight: 500; }
+  .btn-link:hover, .btn-link:visited, .btn-link:focus, .btn-link:active {
+    color: #1E9FF2; }
+  .btn-link:hover, .btn-link:visited, .btn-link:focus, .btn-link:active {
+    text-decoration: none; }
+
 .form-control {
   border-radius: 0; }
 
@@ -237,16 +245,28 @@ b {
 
 .table-plugin th, .table-plugin td {
   border: 1px solid #ededed;
-  font-size: 14px; }
+  font-size: 12px; }
 
 .table-plugin th {
   border-bottom: 0; }
 
 .table-plugin .btn-danger {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .tab-pane .page-item {
-  font-size: 14px; }
+  font-size: 12px; }
+
+@media (min-width: 768px) {
+  .table-plugin th, .table-plugin td, .table-plugin .btn-danger {
+    font-size: 14px; }
+  .tab-pane .page-item {
+    font-size: 14px; } }
+
+@media (min-width: 992px) {
+  .table-plugin th, .table-plugin td, .table-plugin .btn-danger {
+    font-size: 16px; }
+  .tab-pane .page-item {
+    font-size: 16px; } }
 
 .fa-download {
   cursor: pointer; }
@@ -513,10 +533,13 @@ input:checked + .slider:before {
   transform: translateX(14px); }
 
 .card {
-  border-radius: 0;
-  margin-bottom: 0.25em; }
-  .card-body {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+  border-radius: 0; }
+  .card-header {
+    border-bottom: 0;
+    padding: .35rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.015); }
+  .card a {
+    font-weight: 400; }
 
 .dataTables_wrapper {
   width: 100%;
@@ -621,10 +644,25 @@ html, body, .wrapper {
 .max-300 {
   max-width: 300px; }
 
+.text-shadow {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 600 !important; }
+
+a:visited,
+a:link {
+  text-decoration: none;
+  color: #36c6d3; }
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #4F7C84; }
+
 .navbar {
   padding: 0;
   z-index: 1010;
-  border-bottom: 4px solid #ffa000; }
+  border-bottom: 2px solid #ffa000; }
 
 .navbar-brand {
   min-width: 205px;
@@ -860,3 +898,17 @@ span.currency {
   background-repeat: no-repeat;
   vertical-align: middle;
   margin-right: 1em; }
+
+.box-chat {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  background-color: purple;
+  -webkit-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer; }
