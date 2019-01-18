@@ -64,79 +64,10 @@
             <div class="container mt-5">
               <div class="row account-table">
                 <div class="col">
-                  <table class="table table-stripped" id="tblAccount">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Beneficiary</th>
-                        <th>Account number</th>
-                        <th>Bank name</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td class="text-uppercase">Chu Minh</td>
-                        <td>123456</td>
-                        <td>VPBank(VPB)</td>
-                        <td><a class="btn-del" href="#"><i class="far fa-trash-alt"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td class="text-uppercase">Tran Hoang Duy Son</td>
-                        <td>04001010891976</td>
-                        <td>Maritime Bank(MSB)</td>
-                        <td><a class="btn-del" href="#"><i class="far fa-trash-alt"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td class="text-uppercase">Tran Duy Minh</td>
-                        <td>071023678</td>
-                        <td>Vietcombank(VCB)</td>
-                        <td><a class="btn-del" href="#"><i class="far fa-trash-alt"></i></a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div class="text-right">
-                    <button class="btn btn-confirm" id="btnAddAccount" type="button">Add account</button>
-                  </div>
-                </div>
-              </div>
-              <div class="row account-new d-none">
-                <div class="col">
-                  <form class="row" id="frmNewAccunt" action="#">
-                    <div class="col-md-6 mx-auto">
-                      <div class="form-group">
-                        <label>Bank name</label>
-                        <select class="form-control custom-select">
-                          <option value="vcb">Vietcombank</option>
-                          <option value="vpb">VPBank</option>
-                          <option value="msb">Maritime bank</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label>Account name</label>
-                        <input class="form-control" type="text"/>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mx-auto">
-                      <div class="form-group">
-                        <label>Account number</label>
-                        <input class="form-control" type="text"/>
-                      </div>
-                      <div class="form-group">
-                        <label>Brand</label>
-                        <input class="form-control" type="text"/>
-                      </div>
-                    </div>
-                    <div class="col-sm-12">
-                      <div class="text-right">
-                        <button class="btn btn-confirm" id="btnNewAccount" type="submit" data-toggle="modal" data-target="#successModal">Add new</button>
-                        <button class="btn btn-dark" type="button">Cancel</button>
-                      </div>
-                    </div>
-                  </form>
+                  <button class="btn btn-confirm" id="btnNewAccount" type="submit" data-toggle="modal" data-target="#successModal">Success modal</button>
+                  <button class="btn btn-confirm" id="btnNewAccount" type="submit" data-toggle="modal" data-target="#errorModal">Error modal</button>
+                  <button class="btn btn-confirm" id="btnNewAccount" type="submit" data-toggle="modal" data-target="#confirmModal">Confirm modal</button>
+                  <button class="btn btn-confirm" id="btnNewAccount" type="submit" data-toggle="modal" data-target="#infoModal">Info modal</button>
                 </div>
               </div>
             </div>
@@ -147,14 +78,14 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title text-center" id="successModalLabel">Confirmation</h5>
+                          <h4 class="modal-title text-center w-100" id="successModalLabel"> <i class="far fa-check-circle pr-2"></i>Success</h4>
                           <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
                           <div>Bank account added successfully</div>
                         </div>
                         <div class="modal-footer text-right">
-                          <button class="btn btn-confirm" type="button" data-dismiss="modal">OK</button>
+                          <button class="btn btn-success" type="button" data-dismiss="modal">OK</button>
                         </div>
                       </div>
                     </div>
@@ -163,14 +94,47 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title text-center" id="errorModalLabel">Error</h5>
+                          <h4 class="modal-title text-center w-100" id="errorModalLabel"><i class="far fa-times-circle pr-2"></i>Error</h4>
                           <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                          <div>Bank account added successfully</div>
+                          <div>Bank account added error</div>
                         </div>
                         <div class="modal-footer text-right">
                           <button class="btn btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal modal-confirm fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title text-center w-100" id="successModalLabel"> <i class="far fa-question-circle pr-2"></i>Confirm</h4>
+                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                          <div>Confirm?</div>
+                        </div>
+                        <div class="modal-footer text-right">
+                          <button class="btn btn-confirm" type="button" data-dismiss="modal">OK</button>
+                          <button class="btn btn-dark ml-2" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal modal-info fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title text-center w-100" id="successModalLabel"> <i class="fas fa-info-circle pr-2"></i>Info</h4>
+                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                          <div>Confirm?</div>
+                        </div>
+                        <div class="modal-footer text-right">
+                          <button class="btn btn-info" type="button" data-dismiss="modal">OK</button>
                         </div>
                       </div>
                     </div>
@@ -187,50 +151,5 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/addons/datatables.min.js"></script>
     <script src="../js/main.js"></script>
-    <script>
-      $(function(){
-          $('#btnAddAccount').click(function(){
-              $('.account-table').hide('fast',function(){
-                  $('.account-new').removeClass('d-none');
-              })
-          });
-      
-          $('#btnNewAccount').click(function(e){
-              e.preventDefault();
-              var selectVal = $('#frmNewAccunt select option:selected').text();
-              var inputs = $('#frmNewAccunt input'), accountName, accountNum, brand, tr, count;
-              var table = $('#tblAccount tbody');
-              count = Number($('#tblAccount tbody tr:last-child td:first-child').text())+1;
-              accountName = inputs[0].value;
-              accountNum = inputs[1].value;
-              brand = inputs[2].value;
-              console.log(selectVal+' '+accountName+' '+accountNum+' '+brand);
-              tr = $("<tr />", {}).appendTo(table);
-              $("<td />", {
-                  "text": count
-              }).appendTo(tr);
-      
-              $("<td />", {
-                  "class": 'text-uppercase',
-                  "text": accountName
-              }).appendTo(tr);
-      
-              $("<td />", {
-                  "text": accountNum
-              }).appendTo(tr);
-      
-              $("<td />", {
-                  "text": selectVal
-              }).appendTo(tr);
-      
-               $("<td />", {
-                  "html": '<a href="#" class="btn-del"><i class="far fa-trash-alt"></i></a>'
-              }).appendTo(tr);
-      
-              $('.account-new').addClass('d-none');
-              $('.account-table').show('fast');
-          });
-      });
-    </script>
   </body>
 </html>

@@ -1,0 +1,71 @@
+extends ./dashboard.pug
+block content
+    .container.mt-5
+        .row.account-table
+            .col
+                button#btnNewAccount.btn.btn-confirm(type="submit" data-toggle="modal" data-target="#successModal") Success modal
+                button#btnNewAccount.btn.btn-confirm(type="submit" data-toggle="modal" data-target="#errorModal") Error modal
+                button#btnNewAccount.btn.btn-confirm(type="submit" data-toggle="modal" data-target="#confirmModal") Confirm modal
+                button#btnNewAccount.btn.btn-confirm(type="submit" data-toggle="modal" data-target="#infoModal") Info modal
+    //- Modal
+    .container
+        .row
+            .col
+                //- Success modal
+                #successModal.modal.modal-success.fade(tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true")
+                    .modal-dialog(role="document")
+                        .modal-content
+                            .modal-header
+                                h4#successModalLabel.modal-title.text-center.w-100 
+                                    i.far.fa-check-circle.pr-2
+                                    |Success
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                            .modal-body
+                                div Bank account added successfully
+                            .modal-footer.text-right
+                                button.btn.btn-success(type="button" data-dismiss="modal") OK
+
+                //- Error modal
+                #errorModal.modal.modal-error.fade(tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true")
+                    .modal-dialog(role="document")
+                        .modal-content
+                            .modal-header
+                                h4#errorModalLabel.modal-title.text-center.w-100
+                                    i.far.fa-times-circle.pr-2
+                                    |Error
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                            .modal-body
+                                div Bank account added error
+                            .modal-footer.text-right
+                                button.btn.btn-cancel(type="button" data-dismiss="modal") Cancel
+                //- Confirm modal
+                #confirmModal.modal.modal-confirm.fade(tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true")
+                    .modal-dialog(role="document")
+                        .modal-content
+                            .modal-header
+                                h4#successModalLabel.modal-title.text-center.w-100 
+                                    i.far.fa-question-circle.pr-2
+                                    |Confirm
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                            .modal-body
+                                div Confirm?
+                            .modal-footer.text-right
+                                button.btn.btn-confirm(type="button" data-dismiss="modal") OK
+                                button.btn.btn-dark.ml-2(type="button" data-dismiss="modal") Cancel
+                //- Info modal
+                #infoModal.modal.modal-info.fade(tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true")
+                    .modal-dialog(role="document")
+                        .modal-content
+                            .modal-header
+                                h4#successModalLabel.modal-title.text-center.w-100 
+                                    i.fas.fa-info-circle.pr-2
+                                    |Info
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                            .modal-body
+                                div Confirm?
+                            .modal-footer.text-right
+                                button.btn.btn-info(type="button" data-dismiss="modal") OK
