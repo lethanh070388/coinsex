@@ -607,3 +607,18 @@ input:checked+.slider:before {
     }
 }
 // END COLLAPSE
+
+//CAROUSEL
+.owl-theme{
+    .owl-nav {
+        margin-top: 10px;
+        text-align: right;
+    }
+    
+}
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev{
+    width: 25px;
+    border: 1px solid #ccc;
+}
+//END CAROUSEL
