@@ -618,7 +618,16 @@ input:checked+.slider:before {
 }
 .owl-carousel .owl-nav button.owl-next,
 .owl-carousel .owl-nav button.owl-prev{
-    width: 25px;
+    width: 35px;
+    color: #000;
+    border-radius: 0;
     border: 1px solid #ccc;
+    padding-bottom: 2px !important;
+    font-size: 1.3em;
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: #fafafa;
+    color: #000;
+    text-decoration: none;
 }
 //END CAROUSEL
