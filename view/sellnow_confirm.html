@@ -50,86 +50,46 @@
             </div>
           </div>
           <div class="row">
-            <div class="col">
-              <form class="row">
-                <div class="col-sm-6 d-flex flex-column justify-content-between">
-                  <div class="form-group">
-                    <label for="iptAmount">Amount of BTC</label>
-                    <input class="form-control" id="iptAmount" type="text" aria-label="Amount of BTC"/>
-                  </div>
-                  <div class="form-group form-check">
-                    <input class="form-check-input" id="cbTransferTo" type="checkbox" aria-label="Check box for transfer BTC"/>
-                    <label class="form-check-label" for="cbTransferTo">Transfer money to my account for me (differ account registered with COINSEX)</label>
-                  </div>
-                  <div class="form-group">   
-                    <input class="form-control" id="iptBankName" type="text" disabled="disabled" placeholder="Bank name"/>
-                  </div>
-                  <div class="form-group">   
-                    <input class="form-control" id="iptAccountNumber" type="text" disabled="disabled" placeholder="Account number"/>
-                  </div>
-                  <div class="form-group">   
-                    <input class="form-control" id="iptAccountName" type="text" disabled="disabled" placeholder="Account name"/>
-                  </div>
-                  <div class="text-center"><a class="btn btn-dark text-uppercase" href="sellnow_confirm.html">Sell BTC</a></div>
+            <div class="col text-center">
+              <h5 class="text-uppercase"> <img class="pr-1 mb-1" src="../assets/BTC.png"/>BTC</h5>
+              <p class="mb-0">Please deposit into bellow amount to complete order.</p>
+              <div class="img-small text-center mx-auto"><img class="w-100" src="../assets/download.png"/></div>
+              <div class="text-left row justify-content-center">
+                <div class="col-md-6">
+                  <label>Deposit Address</label>
                 </div>
-                <div class="col-sm-6 d-flex justify-content-between flex-column">
-                  <div class="form-group">
-                    <label for="iptAmountMoneyReceive">Amount of money RECEIVE</label>
-                    <input class="form-control" id="iptAmountMoneyReceive" type="number" aria-label="Amount of money receive" disabled="disabled"/>
-                  </div>
-                  <div class="container info">
-                    <div class="row info_header">
-                      <div class="col">
-                        <h6 class="title-6 text-uppercase mb-0">Settlement infomation</h6>
-                      </div>
-                    </div>
-                    <div class="row info_content">
-                      <div class="col">
-                        <div class="row">
-                          <div class="col-6">
-                            <div class="name">Buy from</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="value text-red">Jully</div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">
-                            <div class="name">Price</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="value">149,625,901</div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">       
-                            <div class="name">Sale volume</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="value">0.1</div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">
-                            <div class="name">Payment methods</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="value">Bank transfer</div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">
-                            <div class="name">Bank</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="value">Vietcombank (VCB)</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="input-group row">
+                <div class="input-group-prepend col-md-6 mx-auto">
+                  <button class="btn btn-copy" id="depositAddress" type="button"><i class="far fa-copy"></i></button>
+                  <input class="form-control" type="text" placeholder="Deposit Address" aria-label="Deposit Address" aria-describedby="depositAddress" value="13rmhanzk29i39r3jfslfdm39rq39-qo-fkjalejfla2e"/>
                 </div>
-              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col time-remaining bg-dark py-5 text-white my-5 text-center">
+              <h4 class="font-bold">The remaining time for payment</h4>
+              <p>The transaction timeout will be automatically canceled and we will pay BTC to the seller.</p>
+              <div class="countdown-wrapper">
+                <div class="countdown-item">
+                  <div class="countdown-number">15</div>
+                  <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number">14</div>
+                  <div class="countdown-label">Seconds</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col text-center mb-5">
+              <button class="btn btn-dark mx-2" type="button">Cancel</button><a class="btn btn-confirm mx-2" href="btcsellnow.html">Back</a>
             </div>
           </div>
         </div>

@@ -1,0 +1,56 @@
+extends ./layout.pug
+block main-content
+    .container.mt-5.px-sm-0
+        .row
+            .col 
+                h3.title-3.text-uppercase Sell now
+        .row
+            .col.text-center
+                h5.text-uppercase 
+                    img.pr-1.mb-1(src="../assets/BTC.png")
+                    | BTC
+                p.mb-0 Please deposit into bellow amount to complete order.
+                .img-small.text-center.mx-auto
+                    img.w-100(src="../assets/download.png")
+                .text-left.row.justify-content-center
+                    .col-md-6
+                        label Deposit Address
+                .input-group.row
+                    .input-group-prepend.col-md-6.mx-auto
+                        button.btn.btn-copy#depositAddress(type="button")
+                            i.far.fa-copy
+                        input.form-control(type="text" placeholder="Deposit Address" aria-label="Deposit Address" aria-describedby="depositAddress" value="13rmhanzk29i39r3jfslfdm39rq39-qo-fkjalejfla2e")
+    .container-fluid
+        .row
+            .col.time-remaining.bg-dark.py-5.text-white.my-5.text-center
+                h4.font-bold The remaining time for payment
+                p The transaction timeout will be automatically canceled and we will pay BTC to the seller.
+                .countdown-wrapper
+                    .countdown-item
+                        .countdown-number 15
+                        .countdown-label Minutes
+                    .countdown-item
+                        .countdown-number 14
+                        .countdown-label Seconds
+    .container
+        .row
+            .col.text-center.mb-5
+                button.btn.btn-dark.mx-2(type="button") Cancel
+                a.btn.btn-confirm.mx-2(href="btcsellnow.html" ) Back
+block script-append
+    script.
+        $(function(){
+            $('#cbTransferTo').click(function(){
+                if($(this).is(':checked')){
+                    $('#iptBankName').attr('disabled',false);
+                    $('#iptAccountNumber').attr('disabled',false);
+                    $('#iptAccountName').attr('disabled',false);
+                }
+                else{
+                    $('#iptBankName').attr('disabled',true);
+                    $('#iptAccountNumber').attr('disabled',true);
+                    $('#iptAccountName').attr('disabled',true);
+                }
+            })
+        });
+

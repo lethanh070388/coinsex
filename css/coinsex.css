@@ -18,6 +18,9 @@
 .bg-light {
   background-color: #fff !important; }
 
+.bg-dark {
+  background-color: #033C93 !important; }
+
 .text-blue {
   color: #033C93 !important; }
 
@@ -586,6 +589,23 @@ input:checked + .slider:before {
   background: #fafafa;
   color: #000;
   text-decoration: none; }
+
+.countdown-wrapper {
+  margin: 0 1em;
+  display: flex;
+  justify-content: center; }
+.countdown-item {
+  border: 2px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 1em; }
+.countdown-number {
+  font-size: 4em;
+  padding: .25em .25em 0; }
+.countdown-label {
+  text-align: center;
+  padding: 0.5em; }
 
 .dataTables_wrapper {
   width: 100%;

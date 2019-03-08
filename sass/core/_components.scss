@@ -631,3 +631,28 @@ input:checked+.slider:before {
     text-decoration: none;
 }
 //END CAROUSEL
+
+//COUNTDOWN
+.countdown{
+    &-wrapper{
+        margin: 0 1em;
+        display: flex;
+        justify-content: center;
+    }
+    &-item{
+        border: 2px solid #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 1em;
+    }
+    &-number{
+        font-size: 4em;
+        padding: .25em .25em 0;
+    }
+    &-label{
+        text-align: center;
+        padding: 0.5em;
+    }
+} 
+//COUNTDOWN

@@ -378,7 +378,7 @@
                             <div class="invalid-feedback">Please input email</div>
                           </div>
                           <div class="text-center">
-                            <button class="btn btn-confirm" type="submit">Confirm</button>
+                            <button class="btn btn-confirm" id="btnConfirm" type="submit">Confirm</button>
                           </div>
                         </div>
                       </form>
@@ -431,6 +431,32 @@
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="modal modal-warning fade" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="modalSuccessLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content transfer-container">
+                  <div class="modal-body d-flex align-items-center"><i class="fas fa-check-circle fa-2x pr-3 text-green"></i><span>Password was sent</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="modal modal-warning fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="modalInfo" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content transfer-container">
+                  <div class="modal-body d-flex align-items-center"><i class="far fa-times-circle fa-2x pr-3 text-red"></i><span>Error</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/jquery.min.js"></script>
@@ -455,6 +481,15 @@
               });
           }, false);
       })();
+      $(function(){
+          $("#btnConfirm").on('click',function(){
+              $('#modalSuccess').modal({show: true, focus: true});
+              setTimeout(function(){
+                  $('#modalSuccess').modal('hide');
+                  window.location.replace("index.html");
+              },2000);
+          });
+      });
     </script>
   </body>
 </html>

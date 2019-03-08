@@ -167,7 +167,7 @@ html(lang="en")
                                                         input.form-control(type="email" placeholder="Type your email" required)
                                                         .invalid-feedback Please input email
                                                     .text-center
-                                                        button.btn.btn-confirm(type="submit") Confirm
+                                                        button.btn.btn-confirm#btnConfirm(type="submit") Confirm
                                             .modal-footer
                                                 .mx-auto Recalled password? 
                                                     a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalLogin") Login    
@@ -212,7 +212,26 @@ html(lang="en")
                 .container
                     .row
                         .col.py-2.text-white Designed by COINSEX.ORG. All rights reserved. © 2017
- 
+            //- Modal info
+            .container
+                .row
+                    .col
+                        #modalSuccess.modal.modal-warning.fade(tabindex="-1" role="dialog" aria-labelledby="modalSuccessLabel" aria-hidden="true")
+                            .modal-dialog(role="document")
+                                .modal-content.transfer-container
+                                    .modal-body.d-flex.align-items-center
+                                        i.fas.fa-check-circle.fa-2x.pr-3.text-green
+                                        span Password was sent
+            //- Modal info
+            .container
+                .row
+                    .col
+                        #modalInfo.modal.modal-warning.fade(tabindex="-1" role="dialog" aria-labelledby="modalInfo" aria-hidden="true")
+                            .modal-dialog(role="document")
+                                .modal-content.transfer-container
+                                    .modal-body.d-flex.align-items-center
+                                        i.far.fa-times-circle.fa-2x.pr-3.text-red
+                                        span Error
 
         script(src="../js/jquery-3.3.1.min.js")
         script(src="../js/jquery.min.js")
@@ -237,4 +256,14 @@ html(lang="en")
                     });
                 }, false);
             })();
+            $(function(){
+                $("#btnConfirm").on('click',function(){
+                    $('#modalSuccess').modal({show: true, focus: true});
+                    setTimeout(function(){
+                        $('#modalSuccess').modal('hide');
+                        window.location.replace("index.html");
+                    },2000);
+                });
+            });
         block script-append
+            
