@@ -21,6 +21,12 @@
 .bg-dark {
   background-color: #033C93 !important; }
 
+.bg-ocean {
+  background-color: #33b5e5 !important; }
+
+.bg-red {
+  background-color: #ff3547 !important; }
+
 .text-blue {
   color: #033C93 !important; }
 
@@ -41,6 +47,12 @@
 
 .text-grey {
   color: #737373 !important; }
+
+.text-white {
+  color: #fff !important; }
+
+.text-black {
+  color: #000 !important; }
 
 .link-withdraw {
   color: #FF2A00 !important; }

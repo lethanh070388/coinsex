@@ -1,0 +1,48 @@
+extends ./layout.pug
+block main-content
+    .container-fluid.mt-5.bg-ocean
+        .container
+            .row
+                .col.time-remaining.py-5.text-white.my-5.text-center
+                    h3.font-bold Activate Account
+                    h4.font-bold Your account has been actived before
+                    p Go to 
+                        a.text-blue.font-bold(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalLogin") Login
+    //- Login modal
+    .container
+        .row
+            #modalLogin.modal.modal-register.fade(tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle" aria-hidden="true")
+                .modal-dialog.modal-dialog-centered(role="document")
+                    .modal-content
+                        .modal-header
+                            h5#modalLoginTitle.modal-title.text-uppercase.font-bold.w-100.text-center Login Coinsex System
+                            button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                span(aria-hidden="true") &times;
+                        .modal-body
+                            form#frmLogin.row(action="#" novalidate).needs-validation
+                                .col-md-10.mx-auto
+                                    .form-group
+                                        label.font-bold Email
+                                        input.form-control(type="email" placeholder="Type your email" required)
+                                        .invalid-feedback Please input email
+                                    .form-group
+                                        label.font-bold Password
+                                        input.form-control(type="password" placeholder="Type your password" required)
+                                        .invalid-feedback Please input password
+                                    .form-group
+                                        label.font-bold 2FACode
+                                        input.form-control(type="text" placeholder="Enter 2FA Code (Only if you enable 2FA)" required)
+                                        .invalid-feedback Please input 2FA Code
+                                    .form-group.text-right
+                                        a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalForgotPass") Forgot password
+                                    .text-center
+                                        //- button.btn.btn-confirm(type="submit") Login
+                                        a(href="./setting_personal.html")
+                                            button.btn.btn-confirm(type="button") Login
+                            .modal-footer
+                                .mx-auto Do not have account? 
+                                    a(href="#" data-toggle="modal" data-dismiss="modal" data-target="#modalRegister") Register    
+block script-append
+    script.
+        $(function(){
+        });
