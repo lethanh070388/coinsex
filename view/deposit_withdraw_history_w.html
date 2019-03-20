@@ -13,6 +13,8 @@
     <link href="../css/coinsex.css" rel="stylesheet"/>
   </head>
   <body>
+      
+
     <div class="wrapper">
       <div class="container-fluid p-0">
         <div class="navbar navbar-expand-lg navbar-light bg-light">
@@ -57,7 +59,7 @@
                     <h5 class="text-uppercase text-center"><img class="pr-1 mb-1" src="../assets/VND.png"/>VND</h5>
                     <p class="mb-0 text-center">Please deposit into bellow amount to complete order.</p>
                     <div class="row">
-                      <div class="col-md-8 mx-auto">
+                      <div class="col-md-8 mx-auto" id="deposit-tab-1">
                         <form class="frmDeposit">
                           <div class="form-group">
                             <label>Bank</label>
@@ -72,15 +74,106 @@
                             <input class="form-control" type="text"/>
                           </div>
                           <div class="text-center">
-                            <button class="btn btn-confirm" type="submit">Deposit</button>
+                            <button class="btn btn-confirm" id="bt-deposit-1" type="button" data-toggle="modal" data-target="#successModal" >Deposit</button>
                             <button class="btn btn-dark" type="button">Cancel</button>
                           </div>
+                   
                         </form>
+                  
+                      </div> <!-- end col-8 -->
+                      
+                      <style>
+                          #deposit table tbody tr td i{
+                            padding: 0 1em;
+                          }
+                          #deposit table td,#deposit table th{
+                          border-top: 0!important;
+                          border-bottom: 0!important;
+                          }
+                          #deposit table th{
+                            background-color: #0342a2;
+                            color: #ffffff;
+                          }
+                          #deposit table td:nth-child(2n-1){
+                            color: blue;
+                          }
+                          #deposit .deposit-content-tb span,#deposit .deposit-content-tb em{
+                            color: red;
+                          }
+        
+                        </style>
+                        <!-- === -->
+                      <div class="col-md-10 mx-auto" id="deposit-tab-2">
+
+                          <table id="tab-tb-1" class="table mt-5">
+                              <thead>
+                                <tr>
+                                  <th class="text-uppercase pl-4" colspan="4">DEPOSIT INFORMATION</th>
+                                  
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td ><i class="fas fa-caret-right"></i>Deposit Amount</td>
+                                  <td >111,111 vnđ</td>
+                                  <td ><i class="fas fa-caret-right"></i>Bank name</td>
+                                  <td >Vietcombank</td>
+                                </tr>
+                                <tr>
+                                  <td ><i class="fas fa-caret-right"></i>Contents of Deposit</td>
+                                  <td ><strong>148F62126b</strong></td>
+                                  <td ><i class="fas fa-caret-right"></i>Account number</td>
+                                  <td >212323643</td>
+                                </tr>
+                                <tr>
+                                  <td ><i class="fas fa-caret-right"></i>Branch</td>
+                                  <td >hcm</td>
+                                  <td ><i class="fas fa-caret-right"></i>Account name</td>
+                                  <td >nguyen van a</td>
+                                </tr>
+                                
+                              </tbody>
+                            </table>
+                            <div class="deposit-content-tb">
+                              <p><strong><span>ATTENTION:</span></strong> You MUST include exactly the CONTENT OF DEPOSIT <span>248F62126B</span> in the DEPOSIT Information to credit your COINSEX account. Please send all your money with one payment. Once you've submitted your payment, update the proof of payment below so that we can process it.</p>
+                              <p><em>From 22h-24h, Vietcombank usually run data at the end of the day, it is possible that the system will not be notified of the balance via SMS and will update the statement so that all affected orders will be added immediately after the bank reports SMS or statement. Usually after 24h, all balance will update via SMS.</em></p>
+                            </div>
+                            <div class="text-left">
+                              <button class="btn btn-confirm" type="submit">Submit</button>
+                              <button class="btn btn-dark" type="button">Cancel</button>
+                            </div>
+                              
+
+                            
+                            
+            
+                  </div> <!-- END COL M10 -->
+
+
+                    </div><!-- end row -->
+
+                  </div>
+                </div>
+                 <!-- ===deposit modal -->
+                
+                 <div class="modal modal-success fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title text-left w-100" id="successModalLabel"> <i class="far fa-check-circle pr-2"></i>Success</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div>Bank account added successfully</div>
+                        </div>
+                        <div class="modal-footer ">
+                          <button class="btn btn-success mx-auto" type="button" data-dismiss="modal">OK</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+
+              <!-- end modal -->
+              </div> <!-- end deposit -->
               <div class="container tab-pane fade px-3 py-4" id="withdraw">
                 <div class="row">
                   <div class="col">
@@ -111,6 +204,8 @@
                             <button class="btn btn-dark" type="button">Cancel</button>
                           </div>
                         </form>
+                            
+                        
                       </div>
                     </div>
                   </div>
@@ -711,6 +806,18 @@
               bLengthChange: false
           });
       } );
+
+    </script>
+    <script>
+          //deposit page
+      $("#deposit-tab-2").hide();
+      $(document).ready(function(){   
+        $("#bt-deposit-1").click(function(){
+            $("#deposit-tab-1").hide("slow");
+            $("#deposit-tab-2").show("slow");
+        });
+      });//end deposit page
+
     </script>
   </body>
 </html>
